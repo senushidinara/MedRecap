@@ -219,8 +219,8 @@ const LearningChat: React.FC<LearningChatProps> = ({ topic }) => {
       </div>
 
       {/* Input */}
-      <div className="p-3 bg-white border-t border-slate-200 shrink-0">
-        <form 
+      <div className="p-3 bg-white border-t border-purple-100 shrink-0">
+        <form
           onSubmit={handleSendMessage}
           className="relative flex items-center"
         >
@@ -229,19 +229,19 @@ const LearningChat: React.FC<LearningChatProps> = ({ topic }) => {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             placeholder="Ask about this topic..."
-            className="w-full pl-4 pr-12 py-3 bg-slate-100 border-transparent focus:bg-white border focus:border-teal-500 rounded-xl outline-none transition-all text-sm"
+            className="w-full pl-4 pr-12 py-3 bg-purple-50 border-transparent focus:bg-white border focus:border-purple-400 rounded-xl outline-none transition-all text-sm"
             disabled={isTyping}
           />
           <button
             type="submit"
             disabled={!inputValue.trim() || isTyping}
-            className="absolute right-2 p-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 disabled:opacity-50 disabled:hover:bg-teal-600 transition-colors"
+            className="absolute right-2 p-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 disabled:opacity-50 disabled:from-purple-500 disabled:to-pink-500 transition-colors"
           >
             <Send className="w-4 h-4" />
           </button>
         </form>
         <div className="text-center mt-2">
-           <p className="text-[10px] text-slate-400 flex items-center justify-center">
+           <p className="text-[10px] text-purple-400 flex items-center justify-center">
              <Search className="w-3 h-3 mr-1" />
              AI can access Google Search to find answers
            </p>
