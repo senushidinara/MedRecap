@@ -5,7 +5,7 @@ interface DrawingBoardProps {
   sectionTitle: string;
 }
 
-const COLORS = ['#1e293b', '#ef4444', '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6'];
+const COLORS = ['#6b21a8', '#fb7185', '#60a5fa', '#34d399', '#fbbf24', '#c084fc'];
 
 const DrawingBoard: React.FC<DrawingBoardProps> = ({ sectionTitle }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
