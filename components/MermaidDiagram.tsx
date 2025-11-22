@@ -77,15 +77,15 @@ const MermaidDiagram: React.FC<MermaidDiagramProps> = ({ chart }) => {
   }, [chart]);
 
   return (
-    <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm my-4">
-      <div className="bg-slate-50 border-b border-slate-100 px-4 py-2 flex items-center">
-         <Network className="w-4 h-4 text-teal-600 mr-2" />
-         <span className="text-xs font-bold text-slate-600 uppercase tracking-wide">Process Flow</span>
+    <div className="bg-white/70 backdrop-blur-sm rounded-xl border border-purple-100 overflow-hidden shadow-sm my-4">
+      <div className="bg-gradient-to-r from-purple-50 to-pink-50 border-b border-purple-100 px-4 py-2 flex items-center">
+         <Network className="w-4 h-4 text-purple-600 mr-2" />
+         <span className="text-xs font-bold text-purple-600 uppercase tracking-wide">Process Flow</span>
       </div>
       <div className="p-4 overflow-x-auto flex justify-center bg-white min-h-[100px]" ref={containerRef}>
          <div className="animate-pulse flex space-x-4">
-           <div className="h-2 bg-slate-200 rounded w-20"></div>
-           <div className="h-2 bg-slate-200 rounded w-20"></div>
+           <div className="h-2 bg-purple-200 rounded w-20"></div>
+           <div className="h-2 bg-purple-200 rounded w-20"></div>
          </div>
       </div>
     </div>
