@@ -230,17 +230,17 @@ const StudyContent: React.FC<StudyContentProps> = ({ data, onStartQuiz, settings
                   </div>
 
                   {/* Clinical Card */}
-                  <div className={`rounded-xl border overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full ${settings.highContrast ? 'border-black' : 'bg-white border-slate-200'}`}>
-                    <div className="bg-slate-50 px-6 py-4 border-b border-slate-100 flex items-center">
-                      <div className="p-1.5 bg-rose-100 rounded-lg mr-3">
-                        <Activity className="w-5 h-5 text-rose-600" />
+                  <div className={`rounded-xl border overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full ${settings.highContrast ? 'border-black' : 'bg-white/70 backdrop-blur-sm border-pink-100'}`}>
+                    <div className="bg-gradient-to-r from-pink-50 to-rose-50 px-6 py-4 border-b border-pink-100 flex items-center">
+                      <div className="p-1.5 bg-pink-200 rounded-lg mr-3">
+                        <Activity className="w-5 h-5 text-pink-600" />
                       </div>
                       <div>
                         <h3 className="font-bold text-slate-800">Clinical Application</h3>
-                        <p className="text-xs text-slate-500 font-medium uppercase tracking-wide">Year 3 Pathology</p>
+                        <p className="text-xs text-pink-600 font-medium uppercase tracking-wide">Year 3 Pathology</p>
                       </div>
                     </div>
-                    <div className="p-6 leading-relaxed flex-grow bg-rose-50/10 border-t border-dashed border-rose-100 whitespace-pre-wrap">
+                    <div className="p-6 leading-relaxed flex-grow bg-pink-50/20 border-t border-dashed border-pink-100 whitespace-pre-wrap text-slate-700">
                       {section.clinical}
                     </div>
                   </div>
