@@ -382,18 +382,18 @@ const StudyContent: React.FC<StudyContentProps> = ({ data, onStartQuiz, settings
           })}
 
           {/* Public Health & Global Resources */}
-          <div className="bg-blue-50 border border-blue-100 rounded-2xl p-6 mt-12">
+          <div className="bg-gradient-to-br from-sky-100 to-blue-100 border border-sky-200 rounded-2xl p-6 mt-12">
               <div className="flex items-center mb-4">
-                  <Globe className="w-6 h-6 text-blue-600 mr-2" />
-                  <h3 className="font-bold text-blue-900">Global Medical Resources</h3>
+                  <Globe className="w-6 h-6 text-sky-600 mr-2" />
+                  <h3 className="font-bold text-sky-900">Global Medical Resources</h3>
               </div>
-              <p className="text-sm text-blue-800 mb-4">
+              <p className="text-sm text-sky-800 mb-4">
                  Access standardized clinical guidelines to ensure your knowledge applies worldwide.
               </p>
               <div className="flex flex-wrap gap-3">
-                 <a href="#" className="px-3 py-2 bg-white text-blue-600 rounded-lg text-xs font-bold border border-blue-200 hover:bg-blue-50">WHO Guidelines</a>
-                 <a href="#" className="px-3 py-2 bg-white text-blue-600 rounded-lg text-xs font-bold border border-blue-200 hover:bg-blue-50">Medscape Reference</a>
-                 <a href="#" className="px-3 py-2 bg-white text-blue-600 rounded-lg text-xs font-bold border border-blue-200 hover:bg-blue-50">PubMed</a>
+                 <a href="#" className="px-3 py-2 bg-white text-sky-600 rounded-lg text-xs font-bold border border-sky-200 hover:bg-sky-50">WHO Guidelines</a>
+                 <a href="#" className="px-3 py-2 bg-white text-sky-600 rounded-lg text-xs font-bold border border-sky-200 hover:bg-sky-50">Medscape Reference</a>
+                 <a href="#" className="px-3 py-2 bg-white text-sky-600 rounded-lg text-xs font-bold border border-sky-200 hover:bg-sky-50">PubMed</a>
               </div>
           </div>
 
