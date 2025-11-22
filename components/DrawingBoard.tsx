@@ -149,41 +149,41 @@ const DrawingBoard: React.FC<DrawingBoardProps> = ({ sectionTitle }) => {
   };
 
   return (
-    <div className="flex flex-col h-full bg-white rounded-lg overflow-hidden border border-slate-200" ref={containerRef}>
+    <div className="flex flex-col h-full bg-white rounded-lg overflow-hidden border border-purple-200" ref={containerRef}>
         {/* Toolbar */}
-        <div className="flex items-center justify-between p-2 bg-slate-50 border-b border-slate-100">
+        <div className="flex items-center justify-between p-2 bg-gradient-to-r from-purple-50 to-pink-50 border-b border-purple-100">
             <div className="flex space-x-2 items-center">
-                <button 
+                <button
                   onClick={() => setTool('pen')}
-                  className={`p-2 rounded-lg transition-colors ${tool === 'pen' ? 'bg-teal-100 text-teal-700' : 'text-slate-500 hover:bg-slate-200'}`}
+                  className={`p-2 rounded-lg transition-colors ${tool === 'pen' ? 'bg-purple-200 text-purple-700' : 'text-purple-400 hover:bg-purple-100'}`}
                   title="Pen"
                 >
                     <Pen className="w-4 h-4" />
                 </button>
-                <button 
+                <button
                   onClick={() => setTool('eraser')}
-                  className={`p-2 rounded-lg transition-colors ${tool === 'eraser' ? 'bg-teal-100 text-teal-700' : 'text-slate-500 hover:bg-slate-200'}`}
+                  className={`p-2 rounded-lg transition-colors ${tool === 'eraser' ? 'bg-purple-200 text-purple-700' : 'text-purple-400 hover:bg-purple-100'}`}
                   title="Eraser"
                 >
                     <Eraser className="w-4 h-4" />
                 </button>
-                <div className="h-6 w-px bg-slate-300 mx-1"></div>
+                <div className="h-6 w-px bg-purple-200 mx-1"></div>
                 <div className="flex items-center space-x-1">
                     {COLORS.map(c => (
                         <button
                             key={c}
                             onClick={() => { setColor(c); setTool('pen'); }}
-                            className={`w-5 h-5 rounded-full border-2 transition-transform ${color === c && tool === 'pen' ? 'border-slate-400 scale-110' : 'border-transparent hover:scale-105'}`}
+                            className={`w-5 h-5 rounded-full border-2 transition-transform shadow-sm ${color === c && tool === 'pen' ? 'border-purple-400 scale-110' : 'border-transparent hover:scale-105'}`}
                             style={{ backgroundColor: c }}
                         />
                     ))}
                 </div>
             </div>
             <div className="flex space-x-1">
-                 <button onClick={clearCanvas} className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors" title="Clear">
+                 <button onClick={clearCanvas} className="p-2 text-purple-400 hover:text-red-500 hover:bg-red-100 rounded-lg transition-colors" title="Clear">
                     <Trash2 className="w-4 h-4" />
                  </button>
-                 <button onClick={downloadDrawing} className="p-2 text-slate-400 hover:text-blue-500 hover:bg-blue-50 rounded-lg transition-colors" title="Save Image">
+                 <button onClick={downloadDrawing} className="p-2 text-purple-400 hover:text-sky-500 hover:bg-sky-100 rounded-lg transition-colors" title="Save Image">
                     <Download className="w-4 h-4" />
                  </button>
             </div>
