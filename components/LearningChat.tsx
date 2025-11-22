@@ -163,17 +163,17 @@ const LearningChat: React.FC<LearningChatProps> = ({ topic }) => {
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50 scroll-smooth">
+      <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gradient-to-br from-purple-50 to-pink-50 scroll-smooth">
         {messages.map((msg) => (
-          <div 
-            key={msg.id} 
+          <div
+            key={msg.id}
             className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
           >
-            <div 
+            <div
               className={`max-w-[85%] rounded-2xl p-3.5 text-sm leading-relaxed shadow-sm ${
-                msg.role === 'user' 
-                  ? 'bg-teal-600 text-white rounded-br-none' 
-                  : 'bg-white text-slate-800 border border-slate-200 rounded-bl-none'
+                msg.role === 'user'
+                  ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-br-none'
+                  : 'bg-white text-slate-800 border border-purple-100 rounded-bl-none'
               }`}
             >
               {/* Message Content */}
