@@ -423,15 +423,15 @@ const StudyContent: React.FC<StudyContentProps> = ({ data, onStartQuiz, settings
           <div className="fixed bottom-6 left-0 right-0 flex justify-center z-30 px-4 pointer-events-none">
             <div className="pointer-events-auto flex flex-col items-center space-y-2">
                {showQuizPrompt && (
-                 <div className="bg-white border border-slate-200 shadow-xl rounded-xl p-4 animate-in slide-in-from-bottom-5 mb-2 flex space-x-2">
-                    <button onClick={() => onStartQuiz('Easy')} className="px-4 py-2 bg-green-100 text-green-800 rounded-lg text-sm font-bold hover:bg-green-200">Easy</button>
-                    <button onClick={() => onStartQuiz('Medium')} className="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-lg text-sm font-bold hover:bg-yellow-200">Medium</button>
-                    <button onClick={() => onStartQuiz('Hard')} className="px-4 py-2 bg-red-100 text-red-800 rounded-lg text-sm font-bold hover:bg-red-200">Hard</button>
+                 <div className="bg-white/90 backdrop-blur-sm border border-purple-100 shadow-xl rounded-xl p-4 animate-in slide-in-from-bottom-5 mb-2 flex space-x-2">
+                    <button onClick={() => onStartQuiz('Easy')} className="px-4 py-2 bg-green-200 text-green-800 rounded-lg text-sm font-bold hover:bg-green-300">Easy</button>
+                    <button onClick={() => onStartQuiz('Medium')} className="px-4 py-2 bg-yellow-200 text-yellow-800 rounded-lg text-sm font-bold hover:bg-yellow-300">Medium</button>
+                    <button onClick={() => onStartQuiz('Hard')} className="px-4 py-2 bg-red-200 text-red-800 rounded-lg text-sm font-bold hover:bg-red-300">Hard</button>
                  </div>
                )}
                <button
                 onClick={() => setShowQuizPrompt(!showQuizPrompt)}
-                className={`shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 rounded-2xl px-8 py-4 flex items-center font-bold text-lg border ${settings.highContrast ? 'bg-black text-white border-white' : 'bg-slate-900 text-white hover:bg-slate-800 border-slate-700'}`}
+                className={`shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 rounded-2xl px-8 py-4 flex items-center font-bold text-lg border ${settings.highContrast ? 'bg-black text-white border-white' : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 border-purple-400'}`}
               >
                 <Play className="w-5 h-5 mr-2 fill-current" />
                 Start Smart Quiz
