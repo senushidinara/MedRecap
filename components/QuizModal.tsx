@@ -140,15 +140,15 @@ const QuizModal: React.FC<QuizModalProps> = ({ quizData, isLoading, onClose, onC
   return (
     <div className={`fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 ${settings.highContrast ? 'text-black' : ''}`}>
       <div className="bg-white w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
-        
-        <div className="px-6 py-4 border-b border-slate-100 bg-white sticky top-0 z-10">
+
+        <div className="px-6 py-4 border-b border-purple-100 bg-gradient-to-r from-purple-50 to-pink-50 sticky top-0 z-10">
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-lg font-bold text-slate-800 flex items-center">
-              <span className={`w-2 h-2 rounded-full mr-2 animate-pulse ${difficulty === 'Hard' ? 'bg-red-500' : difficulty === 'Medium' ? 'bg-yellow-500' : 'bg-green-500'}`} />
+              <span className={`w-2 h-2 rounded-full mr-2 animate-pulse ${difficulty === 'Hard' ? 'bg-red-400' : difficulty === 'Medium' ? 'bg-yellow-400' : 'bg-green-400'}`} />
               Knowledge Check: {difficulty} Mode
             </h3>
-            <button onClick={onClose} className="p-1 hover:bg-slate-100 rounded-full transition-colors">
-              <X className="w-6 h-6 text-slate-400" />
+            <button onClick={onClose} className="p-1 hover:bg-purple-100 rounded-full transition-colors">
+              <X className="w-6 h-6 text-purple-600" />
             </button>
           </div>
           
