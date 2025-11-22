@@ -153,19 +153,19 @@ const TopicSelector: React.FC<TopicSelectorProps> = ({ onSelectTopic, isLoading,
       </form>
 
       <div className="max-w-3xl mx-auto">
-        <h4 className="text-center text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Try a Popular Topic</h4>
+        <h4 className="text-center text-xs font-bold text-purple-500 uppercase tracking-widest mb-6">Try a Popular Topic</h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {SUGGESTED_TOPICS.map((topic) => (
             <button
               key={topic.name}
               onClick={() => onSelectTopic(topic.name)}
               disabled={isLoading}
-              className={`flex items-center p-4 bg-white border rounded-xl transition-all text-left group ${settings.highContrast ? 'border-black hover:bg-slate-100' : 'border-slate-200 hover:border-teal-300 hover:shadow-md'}`}
+              className={`flex items-center p-4 bg-white/60 backdrop-blur-sm border rounded-xl transition-all text-left group ${settings.highContrast ? 'border-black hover:bg-slate-100' : 'border-purple-100 hover:border-purple-300 hover:shadow-md hover:bg-white/80'}`}
             >
               <div className={`p-3 rounded-lg ${topic.bg} mr-4 group-hover:scale-110 transition-transform`}>
                 <topic.icon className={`w-6 h-6 ${topic.color}`} />
               </div>
-              <span className="font-medium text-slate-700 group-hover:text-teal-700">{topic.name}</span>
+              <span className="font-medium text-slate-700 group-hover:text-purple-600">{topic.name}</span>
             </button>
           ))}
         </div>
