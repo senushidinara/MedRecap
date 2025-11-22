@@ -208,12 +208,12 @@ const QuizModal: React.FC<QuizModalProps> = ({ quizData, isLoading, onClose, onC
             <div className="space-y-6 max-w-2xl mx-auto">
               <div className="flex justify-between items-start">
                  <div>
-                    <span className="text-xs font-bold text-teal-600 uppercase tracking-wider bg-teal-50 px-2 py-1 rounded-md">
+                    <span className="text-xs font-bold text-purple-600 uppercase tracking-wider bg-purple-100 px-2 py-1 rounded-md">
                       Question {currentIndex + 1}
                     </span>
                  </div>
-                 <button onClick={() => speakQuestion(currentQuestion.question)} className="p-2 bg-slate-100 rounded-full hover:bg-slate-200 text-slate-600">
-                    <Volume2 className={`w-4 h-4 ${isSpeaking ? 'text-teal-600 animate-pulse' : ''}`} />
+                 <button onClick={() => speakQuestion(currentQuestion.question)} className="p-2 bg-purple-100 rounded-full hover:bg-purple-200 text-purple-600">
+                    <Volume2 className={`w-4 h-4 ${isSpeaking ? 'text-purple-600 animate-pulse' : ''}`} />
                  </button>
               </div>
 
