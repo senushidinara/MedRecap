@@ -400,16 +400,16 @@ const StudyContent: React.FC<StudyContentProps> = ({ data, onStartQuiz, settings
           {/* Predictive Pathway Suggestion */}
           {data.relatedTopics && data.relatedTopics.length > 0 && (
              <div className="mt-12 text-center">
-                <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">Up Next: Smart Recommendations</h4>
+                <h4 className="text-sm font-bold text-purple-500 uppercase tracking-widest mb-4">Up Next: Smart Recommendations</h4>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                    {data.relatedTopics.map((topic, i) => (
-                      <button 
+                      <button
                         key={i}
                         onClick={() => onNextTopic(topic)}
-                        className="flex items-center justify-between p-4 bg-white border border-slate-200 rounded-xl hover:border-teal-400 hover:shadow-md transition-all group text-left w-full sm:w-auto min-w-[250px]"
+                        className="flex items-center justify-between p-4 bg-white/70 backdrop-blur-sm border border-purple-100 rounded-xl hover:border-purple-300 hover:shadow-md transition-all group text-left w-full sm:w-auto min-w-[250px]"
                       >
                          <span className="font-medium text-slate-700">{topic}</span>
-                         <ArrowRightCircle className="w-5 h-5 text-slate-300 group-hover:text-teal-500 transition-colors" />
+                         <ArrowRightCircle className="w-5 h-5 text-purple-300 group-hover:text-purple-600 transition-colors" />
                       </button>
                    ))}
                 </div>
