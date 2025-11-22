@@ -117,15 +117,21 @@ const LearningChat: React.FC<LearningChatProps> = ({ topic }) => {
   };
 
   if (!isOpen) {
+    const isDisabled = !chatSession.current;
     return (
       <button
-        onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 bg-teal-600 text-white p-4 rounded-full shadow-xl hover:bg-teal-700 transition-all hover:scale-105 z-40 group flex items-center gap-2"
-        title="Ask AI Tutor"
+        onClick={() => !isDisabled && setIsOpen(true)}
+        disabled={isDisabled}
+        className={`fixed bottom-6 right-6 text-white p-4 rounded-full shadow-xl transition-all hover:scale-105 z-40 group flex items-center gap-2 ${
+          isDisabled
+            ? 'bg-slate-400 cursor-not-allowed'
+            : 'bg-teal-600 hover:bg-teal-700'
+        }`}
+        title={isDisabled ? "Chat requires API key" : "Ask AI Tutor"}
       >
         <MessageCircle className="w-6 h-6" />
         <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 whitespace-nowrap font-bold">
-           Ask Tutor
+           {isDisabled ? 'Chat Offline' : 'Ask Tutor'}
         </span>
       </button>
     );
