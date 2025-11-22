@@ -45,7 +45,12 @@ const LearningChat: React.FC<LearningChatProps> = ({ topic }) => {
 
   const handleSendMessage = async (e?: React.FormEvent) => {
     e?.preventDefault();
-    if (!inputValue.trim() || !chatSession.current) return;
+    if (!inputValue.trim()) return;
+
+    if (!chatSession.current) {
+      alert("Chat feature requires an API key. Please configure your API key to use this feature.");
+      return;
+    }
 
     const userMsg: ChatMessage = {
       id: Date.now().toString(),
