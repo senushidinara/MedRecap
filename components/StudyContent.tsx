@@ -318,9 +318,9 @@ const StudyContent: React.FC<StudyContentProps> = ({ data, onStartQuiz, settings
                         {/* AI Diagram Tab */}
                         <div className={currentTab === 'ai' ? 'block' : 'hidden'}>
                           {!generatedImages[section.title] && !generatingImageFor && (
-                            <button 
+                            <button
                               onClick={() => handleGenerateImage(section.title)}
-                              className="w-full h-[320px] flex flex-col items-center justify-center text-slate-500 hover:bg-slate-200 rounded-lg transition-colors border-2 border-dashed border-slate-300 hover:border-slate-400"
+                              className="w-full h-[320px] flex flex-col items-center justify-center text-purple-400 hover:bg-purple-100 rounded-lg transition-colors border-2 border-dashed border-purple-300 hover:border-purple-400"
                             >
                               <ImageIcon className="w-8 h-8 mb-2 opacity-50" />
                               <span className="font-medium text-sm">Visualize Anatomy</span>
@@ -330,8 +330,8 @@ const StudyContent: React.FC<StudyContentProps> = ({ data, onStartQuiz, settings
 
                           {generatingImageFor === section.title && (
                              <div className="w-full h-[320px] flex flex-col items-center justify-center bg-white rounded-lg">
-                                <div className="w-8 h-8 border-4 border-teal-200 border-t-teal-600 rounded-full animate-spin mb-3"></div>
-                                <span className="text-xs font-medium text-teal-700 animate-pulse">Drawing diagram...</span>
+                                <div className="w-8 h-8 border-4 border-purple-200 border-t-purple-600 rounded-full animate-spin mb-3"></div>
+                                <span className="text-xs font-medium text-purple-600 animate-pulse">Drawing diagram...</span>
                              </div>
                           )}
 
