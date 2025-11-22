@@ -257,15 +257,15 @@ const StudyContent: React.FC<StudyContentProps> = ({ data, onStartQuiz, settings
                      )}
 
                      {/* Key Points */}
-                     <div className="bg-amber-50 rounded-xl p-5 border border-amber-100">
-                        <h4 className="text-amber-800 font-bold mb-3 flex items-center">
+                     <div className="bg-gradient-to-br from-orange-100 to-amber-100 rounded-xl p-5 border border-orange-200">
+                        <h4 className="text-orange-800 font-bold mb-3 flex items-center">
                           <CheckCircle className="w-4 h-4 mr-2" />
                           High Yield Facts
                         </h4>
                         <ul className="space-y-2">
                           {section.keyPoints.map((point, i) => (
-                            <li key={i} className="flex items-start text-amber-900 text-sm">
-                              <span className="mr-2 mt-1.5 w-1.5 h-1.5 bg-amber-400 rounded-full flex-shrink-0" />
+                            <li key={i} className="flex items-start text-orange-900 text-sm">
+                              <span className="mr-2 mt-1.5 w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0" />
                               {point}
                             </li>
                           ))}
