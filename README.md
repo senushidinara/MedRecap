@@ -2,78 +2,117 @@
 
 **Gamified, AI-Powered Medical Learning Platform for Clinical Mastery, Wellness, and Accessibility.**
 
-> A specialized medical study aid bridging foundational sciences with clinical application. Ideal for doctors and students to quickly recap topics with depth.
+> A specialized medical study aid bridging foundational sciences with clinical application. Ideal for doctors, students, and lifelong learners to quickly recap topics with depth, supported by AI.
 
 ---
 
 ## 📖 Introduction / Problem Statement
 
-Medical students often struggle to bridge foundational sciences and clinical application while managing cognitive load and stress. The sheer volume of information leads to burnout, and traditional study methods often lack the adaptability required for neurodiverse learners or those needing rapid clinical integration.
+**The Challenge:** Medical students and professionals often struggle to bridge the gap between foundational sciences (anatomy, physiology) and clinical application (pathology, diagnosis) while managing immense cognitive load and stress. The sheer volume of information can lead to burnout, and traditional linear study methods often lack the adaptability required for neurodiverse learners or those needing rapid, context-aware integration.
 
-**MedRecap AI** solves this by generating adaptive study guides, gamified quizzes, and visual recall exercises using Gemini 2.5 to create a personalized, stress-free learning environment.
+**The Solution:** **MedRecap AI** solves this by using Google's Gemini 2.5 models to generate adaptive study guides, gamified quizzes, and visual recall exercises in real-time. It creates a personalized, stress-free learning environment that prioritizes retention, mental well-being, and accessibility.
 
 ---
 
 ## 🌟 Core Pillars
 
-### 1. 🤖 AI for Healthcare
-Real-time generation of high-yield content tailored to the user's needs.
-*   **Real-time study guide & diagram generation:** Uses Gemini 2.5 AI to create instant content.
-*   **Predictive study pathways:** AI suggests which topics a student should learn next based on quiz performance.
-*   **Natural language question answering:** Ask any clinical question via the floating chat to get AI-generated explanations with cited sources.
-*   **Smart difficulty adjustment:** Quizzes adapt in real time to the student’s skill level.
+<details>
+<summary><strong>1. 🤖 AI for Healthcare</strong></summary>
 
-### 2. 🧠 Mental Health & Wellness
-Designed to reduce cognitive load and preventing burnout during intense study sessions.
-*   **Gamified learning:** Streaks, points (XP), and matching games turn studying into a rewarding habit.
-*   **Visual recall & flowcharts:** Reduces text density to lower cognitive load.
-*   **Stress/mental fatigue tracker:** Quick self-assessment surveys to gauge focus and stress on the dashboard.
-*   **Mindfulness reminders:** Pop-ups encouraging breaks or short breathing exercises when stress is detected.
-*   **Zen Mode:** A "Focus mode" that hides unnecessary UI to reduce overwhelm while studying.
+Leveraging the latest in Generative AI to provide accurate, high-yield medical education.
 
-### 3. ♿ Accessibility & Patient Support
+*   **Real-time Content Generation:** Uses `gemini-2.5-flash` to create study guides, flowcharts, and summaries instantly.
+*   **Predictive Study Pathways:** Analyzes user performance to suggest the next logical topic to study, creating a personalized curriculum.
+*   **Natural Language Question Answering:** An integrated AI tutor (Learning Chat) answers clinical questions and cites sources using Google Search grounding.
+*   **Smart Difficulty Adjustment:** Quizzes adapt dynamically (Easy, Medium, Hard) based on user proficiency.
+
+</details>
+
+<details>
+<summary><strong>2. 🧠 Mental Health & Wellness</strong></summary>
+
+Designed specifically to reduce cognitive load and prevent burnout during intense study sessions.
+
+*   **Mental Fatigue Tracker:** A dashboard tool for quick self-assessment of stress and focus levels.
+*   **Zen Mode:** A distraction-free "Focus Mode" that removes UI clutter to reduce cognitive overwhelm.
+*   **Mindfulness Integration:** Encourages breathing exercises when high stress is reported.
+*   **Gamification:** Uses streaks, XP points, and achievements to make studying rewarding rather than draining.
+
+</details>
+
+<details>
+<summary><strong>3. ♿ Accessibility & Patient Support</strong></summary>
+
 Ensuring medical education is accessible to all learners, including those with diverse needs.
-*   **Text-to-speech (TTS):** Listen to study guides and clinical vignettes for auditory learning.
-*   **High-contrast mode / font size adjustments:** Dedicated settings for visual accessibility.
-*   **Dual learning modes:** Foundational vs Clinical view — helps neurodiverse learners connect concepts.
-*   **Interactive mnemonics & visual recall:** Users can choose auditory, visual, or interactive learning styles.
 
-### 4. 🌍 Public Health & Community Impact
-Scalable education for better-prepared doctors globally.
-*   **Global resource library:** Integration with standardized clinical guidelines (WHO, PubMed) ensures global applicability.
-*   **Offline mode:** The application is designed to be lightweight and functional in regions with limited internet access.
-*   **Cloud syncing:** Students can continue study sessions anywhere (simulated via local storage).
-*   **Impact metrics:** Tracks progress to simulate population-level benefits of better-prepared clinicians.
+*   **Text-to-Speech (TTS):** `gemini-2.5-flash-preview-tts` generates natural-sounding audio summaries for auditory learners.
+*   **Visual Accessibility:** Built-in **High Contrast Mode** and **Large Text** options for visually impaired users.
+*   **Dual Learning Modes:** Splits content into "Foundational" vs. "Clinical" views to help neurodiverse learners connect abstract concepts to concrete applications.
+*   **Multi-modal Learning:** Offers text, audio, interactive diagrams, and drawing tools to suit different learning styles.
+
+</details>
+
+<details>
+<summary><strong>4. 🌍 Public Health & Community Impact</strong></summary>
+
+Scalable education tools for better-prepared doctors globally.
+
+*   **Global Resource Library:** Integration with standardized clinical guidelines ensures knowledge is applicable worldwide.
+*   **Offline-First Design:** The application UI is lightweight and designed to function well in regions with limited internet bandwidth (simulated offline capabilities).
+*   **Cloud Syncing:** Progress and streaks are saved (simulated via local storage) to allow continuous learning across sessions.
+*   **Population Impact:** By training better doctors faster, the platform aims to improve long-term public health outcomes.
+
+</details>
 
 ---
 
 ## ✨ Key Features
 
-### 🧠 AI-Powered Study Guides
+<details>
+<summary><strong>🧠 AI-Powered Study Guides</strong></summary>
+
 *   **Dual-View Learning:** Seamlessly switch between Foundational Sciences (Year 1) and Clinical Application (Year 3).
 *   **Mnemonics & High-Yield Key Points:** Automatically generated memory aids for rapid retention.
 *   **Mermaid.js Flowcharts:** Visualizes complex pathways (e.g., nervous system tracts) instantly.
+*   **Predictive Pathways:** Suggests related topics to build a comprehensive knowledge graph.
 
-### 🎮 Gamified Learning
-*   **Matching Games:** Active recall mini-games for terminology.
+</details>
+
+<details>
+<summary><strong>🎮 Gamified Learning & Active Recall</strong></summary>
+
+*   **Matching Games:** Drag-and-drop mini-games for terminology and definitions.
 *   **Visual Recall:** AI-generated anatomical diagrams with hide/reveal functionality for self-testing.
-*   **Interactive Sketchpad:** Draw directly on the screen to reinforce spatial memory.
+*   **Interactive Sketchpad:** A digital whiteboard to draw and reinforce spatial memory of anatomical structures.
 
-### 📝 Smart Quiz System
-*   **Clinical Vignettes:** USMLE-style questions generated on the fly.
-*   **Adaptive Difficulty:** Easy, Medium, and Hard modes that adjust based on performance.
-*   **AI Analytics Dashboard:** Visualizes progress, streaks, and mastery levels.
+</details>
 
-### ♿ Accessibility & Inclusion
-*   **Text-to-Speech:** Integrated audio synthesis for all content.
-*   **Visual Settings:** High contrast and large text toggles in the header.
-*   **Mobile-Friendly:** Responsive design that works on phones, tablets, and desktops.
+<details>
+<summary><strong>📝 Smart Quiz System</strong></summary>
+
+*   **Clinical Vignettes:** Generates USMLE-style case questions on the fly.
+*   **Adaptive Difficulty:** 
+    *   *Easy:* Basic fact recall.
+    *   *Medium:* Clinical correlation.
+    *   *Hard:* Complex reasoning and obscure presentations.
+*   **AI Analytics Dashboard:** Visualizes progress, streaks, topics mastered, and mastery levels.
+
+</details>
+
+<details>
+<summary><strong>💬 AI Tutor & Search Grounding</strong></summary>
+
+*   **Context-Aware Chat:** Ask follow-up questions about the specific topic being studied.
+*   **Google Search Integration:** The AI uses the `googleSearch` tool to find and cite real-world sources, ensuring up-to-date clinical information.
+
+</details>
 
 ---
 
 ## 🏗️ Architecture
 
-### 🧩 System Flow
+<details>
+<summary><strong>🧩 System Flow (Mermaid Diagram)</strong></summary>
 
 ```mermaid
 graph TD
@@ -84,11 +123,13 @@ graph TD
         Service -->|Text Generation| Flash[Gemini 2.5 Flash]
         Service -->|Diagram Generation| Imagen[Gemini 2.5 Flash Image]
         Service -->|Audio Generation| TTS[Gemini 2.5 TTS]
+        Service -->|Search Grounding| Search[Google Search Tool]
     end
     
     Flash -->|JSON Study Guide + Predictive Pathway| UI
     Imagen -->|Anatomy Diagrams| UI
     TTS -->|Audio Summary| UI
+    Search -->|Cited Sources| UI
     
     UI -->|Render| Guide[Study View]
     Guide -->|Toggle| Zen[Zen Mode]
@@ -96,22 +137,30 @@ graph TD
     Guide -->|Play| Quiz[Adaptive Quiz]
 ```
 
-### 🛠️ Tech Stack
+</details>
+
+<details open>
+<summary><strong>🛠️ Tech Stack</strong></summary>
 
 *   **Frontend**: React 19, TypeScript, Tailwind CSS
-*   **AI Logic**: `gemini-2.5-flash` (Content & Quiz)
+*   **AI Logic**: `gemini-2.5-flash` (Content Generation, Quiz Logic, Chat)
 *   **AI Vision**: `gemini-2.5-flash-image` (Anatomy Diagrams)
-*   **AI Voice**: `gemini-2.5-flash-preview-tts` (Accessibility)
-*   **Visualization**: Mermaid.js (Process Flows)
+*   **AI Voice**: `gemini-2.5-flash-preview-tts` (Accessibility/TTS)
+*   **Visualization**: Mermaid.js (Process Flows), HTML5 Canvas (Sketchpad)
+*   **Icons**: Lucide React
+
+</details>
 
 ---
 
 ## 🚀 How to Use
 
 1.  **Check In**: Use the **Mental Fatigue Tracker** on the dashboard to assess your focus.
-2.  **Search**: Enter any medical topic (e.g., "Circle of Willis").
+2.  **Search**: Enter any medical topic (e.g., "Circle of Willis" or "Myocardial Infarction").
 3.  **Listen**: Click the **Listen** button to hear an AI-narrated summary (Text-to-Speech).
 4.  **Focus**: Toggle **Zen Mode** or **High Contrast** via Settings to reduce overwhelm.
 5.  **Study**: Review the Dual-View content, play the Matching Game, or use the Sketchpad.
-6.  **Quiz**: Select "Hard" difficulty to test your clinical reasoning with AI-generated vignettes.
-7.  **Track**: Watch your **XP and Streaks** grow on the dashboard.
+6.  **Visual Recall**: Click "Visualize Anatomy" to generate a diagram, then toggle visibility to test yourself.
+7.  **Quiz**: Select "Hard" difficulty to test your clinical reasoning with AI-generated vignettes.
+8.  **Ask**: Use the floating "Ask Tutor" button to clarify doubts with cited sources.
+9.  **Track**: Watch your **XP and Streaks** grow on the dashboard.
