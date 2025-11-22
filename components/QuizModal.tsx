@@ -251,12 +251,12 @@ const QuizModal: React.FC<QuizModalProps> = ({ quizData, isLoading, onClose, onC
         </div>
 
         {!isLoading && !showResults && (
-          <div className="p-4 border-t border-slate-100 bg-slate-50 flex justify-between items-center gap-4">
+          <div className="p-4 border-t border-purple-100 bg-gradient-to-r from-purple-50 to-pink-50 flex justify-between items-center gap-4">
              <div className="flex-1">
                {(currentState?.status === 'unanswered' || currentState?.status === 'skipped') && (
                  <button
                    onClick={handleSkip}
-                   className="text-slate-500 hover:text-slate-800 font-medium px-4 py-2 rounded-lg hover:bg-slate-200 transition-colors flex items-center"
+                   className="text-purple-600 hover:text-purple-800 font-medium px-4 py-2 rounded-lg hover:bg-purple-100 transition-colors flex items-center"
                  >
                    <SkipForward className="w-4 h-4 mr-2" />
                    Skip
@@ -265,7 +265,7 @@ const QuizModal: React.FC<QuizModalProps> = ({ quizData, isLoading, onClose, onC
                {(currentState?.status === 'correct' || currentState?.status === 'incorrect') && currentIndex > 0 && (
                   <button
                     onClick={() => setCurrentIndex(prev => prev - 1)}
-                    className="text-slate-500 hover:text-slate-800 font-medium px-4 py-2 rounded-lg hover:bg-slate-200 transition-colors flex items-center"
+                    className="text-purple-600 hover:text-purple-800 font-medium px-4 py-2 rounded-lg hover:bg-purple-100 transition-colors flex items-center"
                   >
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     Back
@@ -279,12 +279,12 @@ const QuizModal: React.FC<QuizModalProps> = ({ quizData, isLoading, onClose, onC
                      onClick={handleNext}
                      className={`px-8 py-3 rounded-xl font-medium flex items-center shadow-md transition-all ${
                        currentIndex === totalQuestions - 1 && skippedCount > 0
-                        ? "bg-amber-500 hover:bg-amber-600 text-white" 
-                        : "bg-slate-900 hover:bg-slate-800 text-white"
+                        ? "bg-gradient-to-r from-amber-400 to-orange-400 hover:from-amber-500 hover:to-orange-500 text-white"
+                        : "bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white"
                      }`}
                    >
-                     {currentIndex === totalQuestions - 1 
-                       ? (skippedCount > 0 ? `Review ${skippedCount} Skipped` : 'Finish Quiz') 
+                     {currentIndex === totalQuestions - 1
+                       ? (skippedCount > 0 ? `Review ${skippedCount} Skipped` : 'Finish Quiz')
                        : 'Next Question'}
                      <ChevronRight className="w-4 h-4 ml-2" />
                    </button>
@@ -292,7 +292,7 @@ const QuizModal: React.FC<QuizModalProps> = ({ quizData, isLoading, onClose, onC
                   <button
                     onClick={handleCheckAnswer}
                     disabled={currentState?.selectedOption === null}
-                    className="bg-teal-600 text-white px-8 py-3 rounded-xl font-medium hover:bg-teal-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-md hover:shadow-lg disabled:shadow-none"
+                    className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-xl font-medium hover:from-purple-600 hover:to-pink-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-md hover:shadow-lg disabled:shadow-none"
                   >
                     Check Answer
                   </button>
