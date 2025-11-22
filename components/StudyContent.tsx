@@ -277,11 +277,11 @@ const StudyContent: React.FC<StudyContentProps> = ({ data, onStartQuiz, settings
                   <div className="md:col-span-5 space-y-6">
                      {/* Mnemonics */}
                      {section.mnemonics && section.mnemonics.length > 0 && (
-                      <div className="bg-indigo-600 rounded-xl p-6 text-white shadow-lg relative overflow-hidden">
+                      <div className="bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl p-6 text-white shadow-lg relative overflow-hidden">
                         <div className="absolute top-0 right-0 -mt-2 -mr-2 w-16 h-16 bg-white/10 rounded-full blur-2xl"></div>
                         <div className="flex items-center mb-4">
-                          <Brain className="w-5 h-5 text-indigo-200 mr-2" />
-                          <h4 className="font-bold text-indigo-100 uppercase tracking-wider text-xs">Memory Hack</h4>
+                          <Brain className="w-5 h-5 text-purple-100 mr-2" />
+                          <h4 className="font-bold text-purple-100 uppercase tracking-wider text-xs">Memory Hack</h4>
                         </div>
                         <ul className="space-y-3 relative z-10">
                           {section.mnemonics.map((m, i) => (
