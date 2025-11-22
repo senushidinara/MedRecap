@@ -11,10 +11,10 @@ interface TopicSelectorProps {
 }
 
 const SUGGESTED_TOPICS = [
-  { name: "Thoracic Surface Anatomy", icon: Box, color: "text-blue-500", bg: "bg-blue-50" },
-  { name: "Coronary Circulation", icon: Heart, color: "text-rose-500", bg: "bg-rose-50" },
-  { name: "Cranial Nerves", icon: Brain, color: "text-amber-500", bg: "bg-amber-50" },
-  { name: "Brachial Plexus", icon: Activity, color: "text-indigo-500", bg: "bg-indigo-50" },
+  { name: "Thoracic Surface Anatomy", icon: Box, color: "text-sky-400", bg: "bg-sky-100" },
+  { name: "Coronary Circulation", icon: Heart, color: "text-pink-400", bg: "bg-pink-100" },
+  { name: "Cranial Nerves", icon: Brain, color: "text-amber-400", bg: "bg-amber-100" },
+  { name: "Brachial Plexus", icon: Activity, color: "text-purple-400", bg: "bg-purple-100" },
 ];
 
 const TopicSelector: React.FC<TopicSelectorProps> = ({ onSelectTopic, isLoading, userStats, onMoodUpdate, settings }) => {
