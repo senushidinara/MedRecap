@@ -280,10 +280,17 @@ export const generateMedicalContent = async (topic: string): Promise<StudyGuide>
 
 export const generateQuizQuestions = async (topic: string, difficulty: 'Easy' | 'Medium' | 'Hard' = 'Medium'): Promise<QuizSession> => {
   const ai = getAiClient();
-  
-  const prompt = `Generate 5 USMLE Step 1/Step 2 CK style clinical vignette questions regarding: ${topic}. 
+
+  // If no API key, use mock data
+  if (!ai) {
+    console.log("API key not available, using mock quiz data");
+    await new Promise(resolve => setTimeout(resolve, 800)); // Simulate loading
+    return generateMockQuizQuestions(topic, difficulty);
+  }
+
+  const prompt = `Generate 5 USMLE Step 1/Step 2 CK style clinical vignette questions regarding: ${topic}.
   Difficulty Level: ${difficulty}.
-  
+
   Focus on:
   1. Clinical anatomy correlations.
   2. Differentiating similar pathologies.
@@ -306,14 +313,14 @@ export const generateQuizQuestions = async (topic: string, difficulty: 'Easy' | 
                 type: Type.OBJECT,
                 properties: {
                   question: { type: Type.STRING },
-                  options: { 
-                    type: Type.ARRAY, 
+                  options: {
+                    type: Type.ARRAY,
                     items: { type: Type.STRING },
                     description: "List of 4 or 5 potential answers"
                   },
-                  correctAnswer: { 
-                    type: Type.INTEGER, 
-                    description: "Zero-based index of the correct option" 
+                  correctAnswer: {
+                    type: Type.INTEGER,
+                    description: "Zero-based index of the correct option"
                   },
                   explanation: { type: Type.STRING }
                 },
