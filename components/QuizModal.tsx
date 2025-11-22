@@ -117,23 +117,23 @@ const QuizModal: React.FC<QuizModalProps> = ({ quizData, isLoading, onClose, onC
 
     const baseStyle = "w-full p-4 text-left rounded-xl border-2 transition-all duration-200 flex items-center justify-between ";
     if (!isGraded) {
-      if (isSelected) return baseStyle + "border-teal-500 bg-teal-50 text-teal-900";
-      return baseStyle + "border-slate-200 hover:border-teal-200 hover:bg-slate-50 text-slate-700";
+      if (isSelected) return baseStyle + "border-purple-400 bg-purple-100 text-purple-900";
+      return baseStyle + "border-purple-200 hover:border-purple-300 hover:bg-purple-50 text-slate-700";
     }
-    if (isCorrectOption) return baseStyle + "border-green-500 bg-green-50 text-green-900 font-medium";
-    if (isSelected && !isCorrectOption) return baseStyle + "border-red-300 bg-red-50 text-red-900";
-    return baseStyle + "border-slate-100 text-slate-400 opacity-60";
+    if (isCorrectOption) return baseStyle + "border-green-400 bg-green-100 text-green-900 font-medium";
+    if (isSelected && !isCorrectOption) return baseStyle + "border-red-300 bg-red-100 text-red-900";
+    return baseStyle + "border-purple-100 text-slate-400 opacity-60";
   };
 
   const getNavIndicatorStyle = (index: number, status: QuestionStatus) => {
     const isActive = index === currentIndex;
     let base = "w-3 h-3 rounded-full transition-all duration-300 ";
-    if (isActive) base += " ring-2 ring-offset-2 ring-slate-400 scale-125 ";
+    if (isActive) base += " ring-2 ring-offset-2 ring-purple-400 scale-125 ";
     switch (status) {
-      case 'correct': return base + "bg-green-500";
-      case 'incorrect': return base + "bg-red-500";
+      case 'correct': return base + "bg-green-400";
+      case 'incorrect': return base + "bg-red-400";
       case 'skipped': return base + "bg-amber-400";
-      default: return base + "bg-slate-200";
+      default: return base + "bg-purple-200";
     }
   };
 
