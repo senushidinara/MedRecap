@@ -137,16 +137,16 @@ const StudyContent: React.FC<StudyContentProps> = ({ data, onStartQuiz, settings
         
         {/* Utility Bar */}
         <div className="flex justify-end space-x-3 mb-6 sticky top-4 z-40">
-           <button 
+           <button
              onClick={handleShare}
-             className="flex items-center space-x-2 px-4 py-2 bg-white text-slate-600 rounded-full hover:bg-blue-50 hover:text-blue-600 shadow-md border border-slate-200 transition-all font-medium text-sm"
+             className="flex items-center space-x-2 px-4 py-2 bg-white/70 backdrop-blur-sm text-purple-600 rounded-full hover:bg-purple-100 shadow-md border border-purple-100 transition-all font-medium text-sm"
            >
              <Share2 className="w-4 h-4" />
              <span>Share</span>
            </button>
-           <button 
+           <button
              onClick={() => setZenMode(!zenMode)}
-             className={`flex items-center space-x-2 px-4 py-2 rounded-full shadow-md border transition-all font-medium text-sm ${zenMode ? 'bg-teal-600 text-white border-teal-600' : 'bg-white text-slate-600 border-slate-200 hover:bg-emerald-50 hover:text-emerald-600'}`}
+             className={`flex items-center space-x-2 px-4 py-2 rounded-full shadow-md border transition-all font-medium text-sm ${zenMode ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white border-purple-500' : 'bg-white/70 backdrop-blur-sm text-purple-600 border-purple-100 hover:bg-purple-100'}`}
            >
              {zenMode ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
              <span>{zenMode ? 'Exit Zen' : 'Zen Mode'}</span>
@@ -156,26 +156,26 @@ const StudyContent: React.FC<StudyContentProps> = ({ data, onStartQuiz, settings
         {/* Hero Header */}
         <div className="mb-10 text-center sm:text-left">
           {!zenMode && (
-            <div className="inline-flex items-center space-x-2 mb-4 px-4 py-1.5 bg-teal-50 text-teal-700 rounded-full text-sm font-semibold border border-teal-100">
+            <div className="inline-flex items-center space-x-2 mb-4 px-4 py-1.5 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold border border-purple-200">
               <Brain className="w-4 h-4" />
               <span>Clinical Anatomy Recap</span>
             </div>
           )}
-          <h1 className="text-4xl sm:text-6xl font-extrabold mb-6 tracking-tight">{data.topic}</h1>
-          
-          <div className={`p-6 rounded-2xl border shadow-sm border-l-4 border-l-teal-500 relative overflow-hidden ${settings.highContrast ? 'bg-white border-black' : 'bg-white border-slate-200'}`}>
+          <h1 className="text-4xl sm:text-6xl font-extrabold mb-6 tracking-tight bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">{data.topic}</h1>
+
+          <div className={`p-6 rounded-2xl border shadow-sm border-l-4 border-l-purple-400 relative overflow-hidden ${settings.highContrast ? 'bg-white border-black' : 'bg-white/70 backdrop-blur-sm border-purple-100'}`}>
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4 gap-4">
               <h3 className="text-lg font-semibold flex items-center">
-                <BookOpen className="w-5 h-5 mr-2 text-teal-600" />
+                <BookOpen className="w-5 h-5 mr-2 text-purple-600" />
                 Quick Overview
               </h3>
               <button
                 onClick={handlePlaySummary}
                 disabled={isAudioLoading}
                 className={`flex items-center justify-center space-x-2 px-4 py-2 rounded-lg text-sm font-bold transition-all shadow-sm ${
-                  isPlayingAudio 
-                    ? 'bg-rose-100 text-rose-700 ring-2 ring-rose-200 animate-pulse' 
-                    : settings.highContrast ? 'bg-black text-white' : 'bg-slate-900 text-white hover:bg-slate-800'
+                  isPlayingAudio
+                    ? 'bg-pink-200 text-pink-700 ring-2 ring-pink-300 animate-pulse'
+                    : settings.highContrast ? 'bg-black text-white' : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600'
                 }`}
               >
                 {isAudioLoading ? (
@@ -198,27 +198,27 @@ const StudyContent: React.FC<StudyContentProps> = ({ data, onStartQuiz, settings
             return (
               <div key={idx} className="relative group">
                 <div className="flex items-center mb-6">
-                  <div className={`flex items-center justify-center w-12 h-12 rounded-2xl font-bold mr-4 text-xl shadow-lg ${settings.highContrast ? 'bg-black text-white' : 'bg-slate-900 text-white'}`}>
+                  <div className={`flex items-center justify-center w-12 h-12 rounded-2xl font-bold mr-4 text-xl shadow-lg ${settings.highContrast ? 'bg-black text-white' : 'bg-gradient-to-br from-purple-400 to-pink-400 text-white'}`}>
                     {idx + 1}
                   </div>
-                  <h2 className="text-3xl font-bold">{section.title}</h2>
+                  <h2 className="text-3xl font-bold text-slate-800">{section.title}</h2>
                 </div>
 
                 {/* Content Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
                   {/* Foundational Card */}
                   <div className="flex flex-col h-full space-y-4">
-                    <div className={`rounded-xl border overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col flex-grow ${settings.highContrast ? 'border-black' : 'bg-white border-slate-200'}`}>
-                      <div className="bg-slate-50 px-6 py-4 border-b border-slate-100 flex items-center">
-                        <div className="p-1.5 bg-blue-100 rounded-lg mr-3">
-                          <GraduationCap className="w-5 h-5 text-blue-600" />
+                    <div className={`rounded-xl border overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col flex-grow ${settings.highContrast ? 'border-black' : 'bg-white/70 backdrop-blur-sm border-sky-100'}`}>
+                      <div className="bg-gradient-to-r from-sky-50 to-blue-50 px-6 py-4 border-b border-sky-100 flex items-center">
+                        <div className="p-1.5 bg-sky-200 rounded-lg mr-3">
+                          <GraduationCap className="w-5 h-5 text-sky-600" />
                         </div>
                         <div>
                           <h3 className="font-bold text-slate-800">Foundational Anatomy</h3>
-                          <p className="text-xs text-slate-500 font-medium uppercase tracking-wide">Year 1 Basis</p>
+                          <p className="text-xs text-sky-600 font-medium uppercase tracking-wide">Year 1 Basis</p>
                         </div>
                       </div>
-                      <div className="p-6 leading-relaxed flex-grow prose prose-sm max-w-none whitespace-pre-wrap">
+                      <div className="p-6 leading-relaxed flex-grow prose prose-sm max-w-none whitespace-pre-wrap text-slate-700">
                         {section.foundational}
                       </div>
                     </div>
@@ -230,17 +230,17 @@ const StudyContent: React.FC<StudyContentProps> = ({ data, onStartQuiz, settings
                   </div>
 
                   {/* Clinical Card */}
-                  <div className={`rounded-xl border overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full ${settings.highContrast ? 'border-black' : 'bg-white border-slate-200'}`}>
-                    <div className="bg-slate-50 px-6 py-4 border-b border-slate-100 flex items-center">
-                      <div className="p-1.5 bg-rose-100 rounded-lg mr-3">
-                        <Activity className="w-5 h-5 text-rose-600" />
+                  <div className={`rounded-xl border overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full ${settings.highContrast ? 'border-black' : 'bg-white/70 backdrop-blur-sm border-pink-100'}`}>
+                    <div className="bg-gradient-to-r from-pink-50 to-rose-50 px-6 py-4 border-b border-pink-100 flex items-center">
+                      <div className="p-1.5 bg-pink-200 rounded-lg mr-3">
+                        <Activity className="w-5 h-5 text-pink-600" />
                       </div>
                       <div>
                         <h3 className="font-bold text-slate-800">Clinical Application</h3>
-                        <p className="text-xs text-slate-500 font-medium uppercase tracking-wide">Year 3 Pathology</p>
+                        <p className="text-xs text-pink-600 font-medium uppercase tracking-wide">Year 3 Pathology</p>
                       </div>
                     </div>
-                    <div className="p-6 leading-relaxed flex-grow bg-rose-50/10 border-t border-dashed border-rose-100 whitespace-pre-wrap">
+                    <div className="p-6 leading-relaxed flex-grow bg-pink-50/20 border-t border-dashed border-pink-100 whitespace-pre-wrap text-slate-700">
                       {section.clinical}
                     </div>
                   </div>
@@ -257,15 +257,15 @@ const StudyContent: React.FC<StudyContentProps> = ({ data, onStartQuiz, settings
                      )}
 
                      {/* Key Points */}
-                     <div className="bg-amber-50 rounded-xl p-5 border border-amber-100">
-                        <h4 className="text-amber-800 font-bold mb-3 flex items-center">
+                     <div className="bg-gradient-to-br from-orange-100 to-amber-100 rounded-xl p-5 border border-orange-200">
+                        <h4 className="text-orange-800 font-bold mb-3 flex items-center">
                           <CheckCircle className="w-4 h-4 mr-2" />
                           High Yield Facts
                         </h4>
                         <ul className="space-y-2">
                           {section.keyPoints.map((point, i) => (
-                            <li key={i} className="flex items-start text-amber-900 text-sm">
-                              <span className="mr-2 mt-1.5 w-1.5 h-1.5 bg-amber-400 rounded-full flex-shrink-0" />
+                            <li key={i} className="flex items-start text-orange-900 text-sm">
+                              <span className="mr-2 mt-1.5 w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0" />
                               {point}
                             </li>
                           ))}
@@ -277,11 +277,11 @@ const StudyContent: React.FC<StudyContentProps> = ({ data, onStartQuiz, settings
                   <div className="md:col-span-5 space-y-6">
                      {/* Mnemonics */}
                      {section.mnemonics && section.mnemonics.length > 0 && (
-                      <div className="bg-indigo-600 rounded-xl p-6 text-white shadow-lg relative overflow-hidden">
+                      <div className="bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl p-6 text-white shadow-lg relative overflow-hidden">
                         <div className="absolute top-0 right-0 -mt-2 -mr-2 w-16 h-16 bg-white/10 rounded-full blur-2xl"></div>
                         <div className="flex items-center mb-4">
-                          <Brain className="w-5 h-5 text-indigo-200 mr-2" />
-                          <h4 className="font-bold text-indigo-100 uppercase tracking-wider text-xs">Memory Hack</h4>
+                          <Brain className="w-5 h-5 text-purple-100 mr-2" />
+                          <h4 className="font-bold text-purple-100 uppercase tracking-wider text-xs">Memory Hack</h4>
                         </div>
                         <ul className="space-y-3 relative z-10">
                           {section.mnemonics.map((m, i) => (
@@ -296,31 +296,31 @@ const StudyContent: React.FC<StudyContentProps> = ({ data, onStartQuiz, settings
                     {/* Visual Recall Section */}
                     <div>
                       {/* Visual Tabs */}
-                      <div className="flex space-x-1 bg-slate-100 p-1 rounded-lg mb-2 border border-slate-200">
-                        <button 
+                      <div className="flex space-x-1 bg-purple-100 p-1 rounded-lg mb-2 border border-purple-200">
+                        <button
                           onClick={() => setTab(section.title, 'ai')}
-                          className={`flex-1 py-2 text-xs font-bold rounded-md flex items-center justify-center transition-all ${currentTab === 'ai' ? 'bg-white text-slate-800 shadow-sm border border-slate-100' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'}`}
+                          className={`flex-1 py-2 text-xs font-bold rounded-md flex items-center justify-center transition-all ${currentTab === 'ai' ? 'bg-white text-purple-700 shadow-sm border border-purple-100' : 'text-purple-500 hover:text-purple-700 hover:bg-white/50'}`}
                         >
                           <ImageIcon className="w-3 h-3 mr-2" />
                           AI Diagram
                         </button>
-                        <button 
+                        <button
                           onClick={() => setTab(section.title, 'draw')}
-                          className={`flex-1 py-2 text-xs font-bold rounded-md flex items-center justify-center transition-all ${currentTab === 'draw' ? 'bg-white text-slate-800 shadow-sm border border-slate-100' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'}`}
+                          className={`flex-1 py-2 text-xs font-bold rounded-md flex items-center justify-center transition-all ${currentTab === 'draw' ? 'bg-white text-purple-700 shadow-sm border border-purple-100' : 'text-purple-500 hover:text-purple-700 hover:bg-white/50'}`}
                         >
                           <PenTool className="w-3 h-3 mr-2" />
                           Sketchpad
                         </button>
                       </div>
 
-                      <div className="bg-slate-100 rounded-xl p-1 border border-slate-200 relative">
+                      <div className="bg-purple-50 rounded-xl p-1 border border-purple-200 relative">
                         
                         {/* AI Diagram Tab */}
                         <div className={currentTab === 'ai' ? 'block' : 'hidden'}>
                           {!generatedImages[section.title] && !generatingImageFor && (
-                            <button 
+                            <button
                               onClick={() => handleGenerateImage(section.title)}
-                              className="w-full h-[320px] flex flex-col items-center justify-center text-slate-500 hover:bg-slate-200 rounded-lg transition-colors border-2 border-dashed border-slate-300 hover:border-slate-400"
+                              className="w-full h-[320px] flex flex-col items-center justify-center text-purple-400 hover:bg-purple-100 rounded-lg transition-colors border-2 border-dashed border-purple-300 hover:border-purple-400"
                             >
                               <ImageIcon className="w-8 h-8 mb-2 opacity-50" />
                               <span className="font-medium text-sm">Visualize Anatomy</span>
@@ -330,8 +330,8 @@ const StudyContent: React.FC<StudyContentProps> = ({ data, onStartQuiz, settings
 
                           {generatingImageFor === section.title && (
                              <div className="w-full h-[320px] flex flex-col items-center justify-center bg-white rounded-lg">
-                                <div className="w-8 h-8 border-4 border-teal-200 border-t-teal-600 rounded-full animate-spin mb-3"></div>
-                                <span className="text-xs font-medium text-teal-700 animate-pulse">Drawing diagram...</span>
+                                <div className="w-8 h-8 border-4 border-purple-200 border-t-purple-600 rounded-full animate-spin mb-3"></div>
+                                <span className="text-xs font-medium text-purple-600 animate-pulse">Drawing diagram...</span>
                              </div>
                           )}
 
@@ -382,34 +382,34 @@ const StudyContent: React.FC<StudyContentProps> = ({ data, onStartQuiz, settings
           })}
 
           {/* Public Health & Global Resources */}
-          <div className="bg-blue-50 border border-blue-100 rounded-2xl p-6 mt-12">
+          <div className="bg-gradient-to-br from-sky-100 to-blue-100 border border-sky-200 rounded-2xl p-6 mt-12">
               <div className="flex items-center mb-4">
-                  <Globe className="w-6 h-6 text-blue-600 mr-2" />
-                  <h3 className="font-bold text-blue-900">Global Medical Resources</h3>
+                  <Globe className="w-6 h-6 text-sky-600 mr-2" />
+                  <h3 className="font-bold text-sky-900">Global Medical Resources</h3>
               </div>
-              <p className="text-sm text-blue-800 mb-4">
+              <p className="text-sm text-sky-800 mb-4">
                  Access standardized clinical guidelines to ensure your knowledge applies worldwide.
               </p>
               <div className="flex flex-wrap gap-3">
-                 <a href="#" className="px-3 py-2 bg-white text-blue-600 rounded-lg text-xs font-bold border border-blue-200 hover:bg-blue-50">WHO Guidelines</a>
-                 <a href="#" className="px-3 py-2 bg-white text-blue-600 rounded-lg text-xs font-bold border border-blue-200 hover:bg-blue-50">Medscape Reference</a>
-                 <a href="#" className="px-3 py-2 bg-white text-blue-600 rounded-lg text-xs font-bold border border-blue-200 hover:bg-blue-50">PubMed</a>
+                 <a href="#" className="px-3 py-2 bg-white text-sky-600 rounded-lg text-xs font-bold border border-sky-200 hover:bg-sky-50">WHO Guidelines</a>
+                 <a href="#" className="px-3 py-2 bg-white text-sky-600 rounded-lg text-xs font-bold border border-sky-200 hover:bg-sky-50">Medscape Reference</a>
+                 <a href="#" className="px-3 py-2 bg-white text-sky-600 rounded-lg text-xs font-bold border border-sky-200 hover:bg-sky-50">PubMed</a>
               </div>
           </div>
 
           {/* Predictive Pathway Suggestion */}
           {data.relatedTopics && data.relatedTopics.length > 0 && (
              <div className="mt-12 text-center">
-                <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">Up Next: Smart Recommendations</h4>
+                <h4 className="text-sm font-bold text-purple-500 uppercase tracking-widest mb-4">Up Next: Smart Recommendations</h4>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                    {data.relatedTopics.map((topic, i) => (
-                      <button 
+                      <button
                         key={i}
                         onClick={() => onNextTopic(topic)}
-                        className="flex items-center justify-between p-4 bg-white border border-slate-200 rounded-xl hover:border-teal-400 hover:shadow-md transition-all group text-left w-full sm:w-auto min-w-[250px]"
+                        className="flex items-center justify-between p-4 bg-white/70 backdrop-blur-sm border border-purple-100 rounded-xl hover:border-purple-300 hover:shadow-md transition-all group text-left w-full sm:w-auto min-w-[250px]"
                       >
                          <span className="font-medium text-slate-700">{topic}</span>
-                         <ArrowRightCircle className="w-5 h-5 text-slate-300 group-hover:text-teal-500 transition-colors" />
+                         <ArrowRightCircle className="w-5 h-5 text-purple-300 group-hover:text-purple-600 transition-colors" />
                       </button>
                    ))}
                 </div>
@@ -423,15 +423,15 @@ const StudyContent: React.FC<StudyContentProps> = ({ data, onStartQuiz, settings
           <div className="fixed bottom-6 left-0 right-0 flex justify-center z-30 px-4 pointer-events-none">
             <div className="pointer-events-auto flex flex-col items-center space-y-2">
                {showQuizPrompt && (
-                 <div className="bg-white border border-slate-200 shadow-xl rounded-xl p-4 animate-in slide-in-from-bottom-5 mb-2 flex space-x-2">
-                    <button onClick={() => onStartQuiz('Easy')} className="px-4 py-2 bg-green-100 text-green-800 rounded-lg text-sm font-bold hover:bg-green-200">Easy</button>
-                    <button onClick={() => onStartQuiz('Medium')} className="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-lg text-sm font-bold hover:bg-yellow-200">Medium</button>
-                    <button onClick={() => onStartQuiz('Hard')} className="px-4 py-2 bg-red-100 text-red-800 rounded-lg text-sm font-bold hover:bg-red-200">Hard</button>
+                 <div className="bg-white/90 backdrop-blur-sm border border-purple-100 shadow-xl rounded-xl p-4 animate-in slide-in-from-bottom-5 mb-2 flex space-x-2">
+                    <button onClick={() => onStartQuiz('Easy')} className="px-4 py-2 bg-green-200 text-green-800 rounded-lg text-sm font-bold hover:bg-green-300">Easy</button>
+                    <button onClick={() => onStartQuiz('Medium')} className="px-4 py-2 bg-yellow-200 text-yellow-800 rounded-lg text-sm font-bold hover:bg-yellow-300">Medium</button>
+                    <button onClick={() => onStartQuiz('Hard')} className="px-4 py-2 bg-red-200 text-red-800 rounded-lg text-sm font-bold hover:bg-red-300">Hard</button>
                  </div>
                )}
                <button
                 onClick={() => setShowQuizPrompt(!showQuizPrompt)}
-                className={`shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 rounded-2xl px-8 py-4 flex items-center font-bold text-lg border ${settings.highContrast ? 'bg-black text-white border-white' : 'bg-slate-900 text-white hover:bg-slate-800 border-slate-700'}`}
+                className={`shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 rounded-2xl px-8 py-4 flex items-center font-bold text-lg border ${settings.highContrast ? 'bg-black text-white border-white' : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 border-purple-400'}`}
               >
                 <Play className="w-5 h-5 mr-2 fill-current" />
                 Start Smart Quiz

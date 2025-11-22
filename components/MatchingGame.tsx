@@ -105,15 +105,15 @@ const MatchingGame: React.FC<MatchingGameProps> = ({ pairs, settings }) => {
   if (pairs.length === 0) return null;
 
   return (
-    <div className={`bg-white rounded-xl border p-6 shadow-sm ${settings.highContrast ? 'border-black' : 'border-slate-200'}`}>
+    <div className={`bg-white/70 backdrop-blur-sm rounded-xl border p-6 shadow-sm ${settings.highContrast ? 'border-black' : 'border-purple-100'}`}>
       <div className="flex justify-between items-center mb-4">
         <h4 className={`font-bold flex items-center ${settings.highContrast ? 'text-black' : 'text-slate-800'}`}>
-          <Sparkles className={`w-4 h-4 mr-2 ${settings.highContrast ? 'text-black' : 'text-teal-500'}`} />
+          <Sparkles className={`w-4 h-4 mr-2 ${settings.highContrast ? 'text-black' : 'text-purple-500'}`} />
           Quick Match: Active Recall
         </h4>
-        <button 
+        <button
           onClick={initializeGame}
-          className={`p-2 rounded-full transition-colors ${settings.highContrast ? 'text-black hover:bg-slate-200' : 'text-slate-400 hover:bg-slate-100 hover:text-teal-600'}`}
+          className={`p-2 rounded-full transition-colors ${settings.highContrast ? 'text-black hover:bg-slate-200' : 'text-purple-400 hover:bg-purple-100 hover:text-purple-600'}`}
           title="Reset Game"
         >
           <RefreshCw className="w-4 h-4" />
@@ -122,13 +122,13 @@ const MatchingGame: React.FC<MatchingGameProps> = ({ pairs, settings }) => {
 
       {isComplete ? (
         <div className="text-center py-8 animate-in fade-in zoom-in">
-          <div className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 ${settings.highContrast ? 'bg-black' : 'bg-green-100'}`}>
+          <div className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 ${settings.highContrast ? 'bg-black' : 'bg-gradient-to-br from-green-200 to-emerald-200'}`}>
             <Check className={`w-6 h-6 ${settings.highContrast ? 'text-white' : 'text-green-600'}`} />
           </div>
           <p className={`font-bold ${settings.highContrast ? 'text-black' : 'text-slate-800'}`}>All Matched!</p>
-          <button 
+          <button
             onClick={initializeGame}
-            className={`mt-3 text-sm font-medium hover:underline ${settings.highContrast ? 'text-black' : 'text-teal-600'}`}
+            className={`mt-3 text-sm font-medium hover:underline ${settings.highContrast ? 'text-black' : 'text-purple-600'}`}
           >
             Play Again
           </button>
@@ -141,10 +141,10 @@ const MatchingGame: React.FC<MatchingGameProps> = ({ pairs, settings }) => {
               onClick={() => handleTileClick(tile.id)}
               className={`
                 p-3 rounded-lg text-sm font-medium text-left transition-all duration-200 border-2
-                ${tile.state === 'default' ? (settings.highContrast ? 'bg-white border-black text-black hover:bg-slate-100' : 'bg-slate-50 border-transparent hover:border-slate-200 text-slate-700') : ''}
-                ${tile.state === 'selected' ? (settings.highContrast ? 'bg-black text-white border-black' : 'bg-teal-50 border-teal-500 text-teal-800 transform scale-[1.02]') : ''}
-                ${tile.state === 'matched' ? (settings.highContrast ? 'bg-slate-200 text-black border-slate-400 opacity-50' : 'bg-green-50 border-green-400 text-green-800 opacity-50') : ''}
-                ${tile.state === 'wrong' ? (settings.highContrast ? 'bg-white border-black text-black border-4' : 'bg-red-50 border-red-400 text-red-800 animate-pulse') : ''}
+                ${tile.state === 'default' ? (settings.highContrast ? 'bg-white border-black text-black hover:bg-slate-100' : 'bg-purple-50 border-purple-200 hover:border-purple-300 text-slate-700') : ''}
+                ${tile.state === 'selected' ? (settings.highContrast ? 'bg-black text-white border-black' : 'bg-gradient-to-br from-purple-100 to-pink-100 border-purple-400 text-purple-800 transform scale-[1.02]') : ''}
+                ${tile.state === 'matched' ? (settings.highContrast ? 'bg-slate-200 text-black border-slate-400 opacity-50' : 'bg-gradient-to-br from-green-100 to-emerald-100 border-green-300 text-green-800 opacity-50') : ''}
+                ${tile.state === 'wrong' ? (settings.highContrast ? 'bg-white border-black text-black border-4' : 'bg-red-100 border-red-300 text-red-800 animate-pulse') : ''}
                 ${tile.state === 'matched' ? 'cursor-default' : ''}
               `}
             >

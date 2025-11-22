@@ -117,38 +117,38 @@ const QuizModal: React.FC<QuizModalProps> = ({ quizData, isLoading, onClose, onC
 
     const baseStyle = "w-full p-4 text-left rounded-xl border-2 transition-all duration-200 flex items-center justify-between ";
     if (!isGraded) {
-      if (isSelected) return baseStyle + "border-teal-500 bg-teal-50 text-teal-900";
-      return baseStyle + "border-slate-200 hover:border-teal-200 hover:bg-slate-50 text-slate-700";
+      if (isSelected) return baseStyle + "border-purple-400 bg-purple-100 text-purple-900";
+      return baseStyle + "border-purple-200 hover:border-purple-300 hover:bg-purple-50 text-slate-700";
     }
-    if (isCorrectOption) return baseStyle + "border-green-500 bg-green-50 text-green-900 font-medium";
-    if (isSelected && !isCorrectOption) return baseStyle + "border-red-300 bg-red-50 text-red-900";
-    return baseStyle + "border-slate-100 text-slate-400 opacity-60";
+    if (isCorrectOption) return baseStyle + "border-green-400 bg-green-100 text-green-900 font-medium";
+    if (isSelected && !isCorrectOption) return baseStyle + "border-red-300 bg-red-100 text-red-900";
+    return baseStyle + "border-purple-100 text-slate-400 opacity-60";
   };
 
   const getNavIndicatorStyle = (index: number, status: QuestionStatus) => {
     const isActive = index === currentIndex;
     let base = "w-3 h-3 rounded-full transition-all duration-300 ";
-    if (isActive) base += " ring-2 ring-offset-2 ring-slate-400 scale-125 ";
+    if (isActive) base += " ring-2 ring-offset-2 ring-purple-400 scale-125 ";
     switch (status) {
-      case 'correct': return base + "bg-green-500";
-      case 'incorrect': return base + "bg-red-500";
+      case 'correct': return base + "bg-green-400";
+      case 'incorrect': return base + "bg-red-400";
       case 'skipped': return base + "bg-amber-400";
-      default: return base + "bg-slate-200";
+      default: return base + "bg-purple-200";
     }
   };
 
   return (
     <div className={`fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 ${settings.highContrast ? 'text-black' : ''}`}>
       <div className="bg-white w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
-        
-        <div className="px-6 py-4 border-b border-slate-100 bg-white sticky top-0 z-10">
+
+        <div className="px-6 py-4 border-b border-purple-100 bg-gradient-to-r from-purple-50 to-pink-50 sticky top-0 z-10">
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-lg font-bold text-slate-800 flex items-center">
-              <span className={`w-2 h-2 rounded-full mr-2 animate-pulse ${difficulty === 'Hard' ? 'bg-red-500' : difficulty === 'Medium' ? 'bg-yellow-500' : 'bg-green-500'}`} />
+              <span className={`w-2 h-2 rounded-full mr-2 animate-pulse ${difficulty === 'Hard' ? 'bg-red-400' : difficulty === 'Medium' ? 'bg-yellow-400' : 'bg-green-400'}`} />
               Knowledge Check: {difficulty} Mode
             </h3>
-            <button onClick={onClose} className="p-1 hover:bg-slate-100 rounded-full transition-colors">
-              <X className="w-6 h-6 text-slate-400" />
+            <button onClick={onClose} className="p-1 hover:bg-purple-100 rounded-full transition-colors">
+              <X className="w-6 h-6 text-purple-600" />
             </button>
           </div>
           
@@ -173,33 +173,33 @@ const QuizModal: React.FC<QuizModalProps> = ({ quizData, isLoading, onClose, onC
             </div>
           ) : showResults ? (
             <div className="text-center py-10 animate-in fade-in zoom-in duration-300">
-              <div className="inline-flex items-center justify-center w-24 h-24 bg-teal-100 rounded-full mb-6">
-                <Trophy className="w-12 h-12 text-teal-600" />
+              <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full mb-6">
+                <Trophy className="w-12 h-12 text-purple-600" />
               </div>
               <h2 className="text-3xl font-bold text-slate-900 mb-2">Quiz Complete!</h2>
-              
+
               <div className="grid grid-cols-3 gap-4 max-w-sm mx-auto my-8">
-                <div className="bg-green-50 p-4 rounded-xl border border-green-100">
+                <div className="bg-gradient-to-br from-green-100 to-emerald-100 p-4 rounded-xl border border-green-200">
                   <div className="text-2xl font-bold text-green-600">{correctCount}</div>
-                  <div className="text-xs text-green-800 font-medium uppercase">Correct</div>
+                  <div className="text-xs text-green-700 font-medium uppercase">Correct</div>
                 </div>
-                <div className="bg-red-50 p-4 rounded-xl border border-red-100">
+                <div className="bg-gradient-to-br from-red-100 to-rose-100 p-4 rounded-xl border border-red-200">
                   <div className="text-2xl font-bold text-red-600">{incorrectCount}</div>
-                  <div className="text-xs text-red-800 font-medium uppercase">Incorrect</div>
+                  <div className="text-xs text-red-700 font-medium uppercase">Incorrect</div>
                 </div>
-                <div className="bg-amber-50 p-4 rounded-xl border border-amber-100">
+                <div className="bg-gradient-to-br from-amber-100 to-orange-100 p-4 rounded-xl border border-amber-200">
                   <div className="text-2xl font-bold text-amber-600">{skippedCount}</div>
-                  <div className="text-xs text-amber-800 font-medium uppercase">Skipped</div>
+                  <div className="text-xs text-amber-700 font-medium uppercase">Skipped</div>
                 </div>
-              </div>
-              
-              <div className="bg-teal-50 p-4 rounded-lg mb-8 inline-block">
-                 <p className="text-teal-800 font-bold">Points Earned: +{correctCount * 10} XP</p>
               </div>
 
-              <button 
+              <div className="bg-gradient-to-r from-purple-100 to-pink-100 p-4 rounded-lg mb-8 inline-block border border-purple-200">
+                 <p className="text-purple-800 font-bold">Points Earned: +{correctCount * 10} XP</p>
+              </div>
+
+              <button
                 onClick={() => onComplete(correctCount, totalQuestions)}
-                className="bg-slate-900 text-white px-8 py-3 rounded-xl hover:bg-slate-800 font-medium shadow-lg hover:shadow-xl transition-all"
+                className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-xl hover:from-purple-600 hover:to-pink-600 font-medium shadow-lg hover:shadow-xl transition-all"
               >
                 Complete & Save Progress
               </button>
@@ -208,12 +208,12 @@ const QuizModal: React.FC<QuizModalProps> = ({ quizData, isLoading, onClose, onC
             <div className="space-y-6 max-w-2xl mx-auto">
               <div className="flex justify-between items-start">
                  <div>
-                    <span className="text-xs font-bold text-teal-600 uppercase tracking-wider bg-teal-50 px-2 py-1 rounded-md">
+                    <span className="text-xs font-bold text-purple-600 uppercase tracking-wider bg-purple-100 px-2 py-1 rounded-md">
                       Question {currentIndex + 1}
                     </span>
                  </div>
-                 <button onClick={() => speakQuestion(currentQuestion.question)} className="p-2 bg-slate-100 rounded-full hover:bg-slate-200 text-slate-600">
-                    <Volume2 className={`w-4 h-4 ${isSpeaking ? 'text-teal-600 animate-pulse' : ''}`} />
+                 <button onClick={() => speakQuestion(currentQuestion.question)} className="p-2 bg-purple-100 rounded-full hover:bg-purple-200 text-purple-600">
+                    <Volume2 className={`w-4 h-4 ${isSpeaking ? 'text-purple-600 animate-pulse' : ''}`} />
                  </button>
               </div>
 
@@ -231,15 +231,15 @@ const QuizModal: React.FC<QuizModalProps> = ({ quizData, isLoading, onClose, onC
                   >
                     <span>{option}</span>
                     {(currentState?.status === 'correct' || currentState?.status === 'incorrect') && idx === currentQuestion.correctAnswer && (
-                      <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 ml-2" />
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 ml-2" />
                     )}
                   </button>
                 ))}
               </div>
 
               {(currentState?.status === 'correct' || currentState?.status === 'incorrect') && (
-                <div className="bg-blue-50 p-5 rounded-xl border border-blue-100 text-blue-900 text-sm leading-relaxed animate-in fade-in slide-in-from-bottom-2">
-                  <div className="flex items-center mb-2 text-blue-700 font-bold">
+                <div className="bg-gradient-to-br from-sky-100 to-blue-100 p-5 rounded-xl border border-sky-200 text-sky-900 text-sm leading-relaxed animate-in fade-in slide-in-from-bottom-2">
+                  <div className="flex items-center mb-2 text-sky-700 font-bold">
                     <HelpCircle className="w-4 h-4 mr-2" />
                     Clinical Explanation
                   </div>
@@ -251,12 +251,12 @@ const QuizModal: React.FC<QuizModalProps> = ({ quizData, isLoading, onClose, onC
         </div>
 
         {!isLoading && !showResults && (
-          <div className="p-4 border-t border-slate-100 bg-slate-50 flex justify-between items-center gap-4">
+          <div className="p-4 border-t border-purple-100 bg-gradient-to-r from-purple-50 to-pink-50 flex justify-between items-center gap-4">
              <div className="flex-1">
                {(currentState?.status === 'unanswered' || currentState?.status === 'skipped') && (
                  <button
                    onClick={handleSkip}
-                   className="text-slate-500 hover:text-slate-800 font-medium px-4 py-2 rounded-lg hover:bg-slate-200 transition-colors flex items-center"
+                   className="text-purple-600 hover:text-purple-800 font-medium px-4 py-2 rounded-lg hover:bg-purple-100 transition-colors flex items-center"
                  >
                    <SkipForward className="w-4 h-4 mr-2" />
                    Skip
@@ -265,7 +265,7 @@ const QuizModal: React.FC<QuizModalProps> = ({ quizData, isLoading, onClose, onC
                {(currentState?.status === 'correct' || currentState?.status === 'incorrect') && currentIndex > 0 && (
                   <button
                     onClick={() => setCurrentIndex(prev => prev - 1)}
-                    className="text-slate-500 hover:text-slate-800 font-medium px-4 py-2 rounded-lg hover:bg-slate-200 transition-colors flex items-center"
+                    className="text-purple-600 hover:text-purple-800 font-medium px-4 py-2 rounded-lg hover:bg-purple-100 transition-colors flex items-center"
                   >
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     Back
@@ -279,12 +279,12 @@ const QuizModal: React.FC<QuizModalProps> = ({ quizData, isLoading, onClose, onC
                      onClick={handleNext}
                      className={`px-8 py-3 rounded-xl font-medium flex items-center shadow-md transition-all ${
                        currentIndex === totalQuestions - 1 && skippedCount > 0
-                        ? "bg-amber-500 hover:bg-amber-600 text-white" 
-                        : "bg-slate-900 hover:bg-slate-800 text-white"
+                        ? "bg-gradient-to-r from-amber-400 to-orange-400 hover:from-amber-500 hover:to-orange-500 text-white"
+                        : "bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white"
                      }`}
                    >
-                     {currentIndex === totalQuestions - 1 
-                       ? (skippedCount > 0 ? `Review ${skippedCount} Skipped` : 'Finish Quiz') 
+                     {currentIndex === totalQuestions - 1
+                       ? (skippedCount > 0 ? `Review ${skippedCount} Skipped` : 'Finish Quiz')
                        : 'Next Question'}
                      <ChevronRight className="w-4 h-4 ml-2" />
                    </button>
@@ -292,7 +292,7 @@ const QuizModal: React.FC<QuizModalProps> = ({ quizData, isLoading, onClose, onC
                   <button
                     onClick={handleCheckAnswer}
                     disabled={currentState?.selectedOption === null}
-                    className="bg-teal-600 text-white px-8 py-3 rounded-xl font-medium hover:bg-teal-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-md hover:shadow-lg disabled:shadow-none"
+                    className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-xl font-medium hover:from-purple-600 hover:to-pink-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-md hover:shadow-lg disabled:shadow-none"
                   >
                     Check Answer
                   </button>
