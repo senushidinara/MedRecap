@@ -198,27 +198,27 @@ const StudyContent: React.FC<StudyContentProps> = ({ data, onStartQuiz, settings
             return (
               <div key={idx} className="relative group">
                 <div className="flex items-center mb-6">
-                  <div className={`flex items-center justify-center w-12 h-12 rounded-2xl font-bold mr-4 text-xl shadow-lg ${settings.highContrast ? 'bg-black text-white' : 'bg-slate-900 text-white'}`}>
+                  <div className={`flex items-center justify-center w-12 h-12 rounded-2xl font-bold mr-4 text-xl shadow-lg ${settings.highContrast ? 'bg-black text-white' : 'bg-gradient-to-br from-purple-400 to-pink-400 text-white'}`}>
                     {idx + 1}
                   </div>
-                  <h2 className="text-3xl font-bold">{section.title}</h2>
+                  <h2 className="text-3xl font-bold text-slate-800">{section.title}</h2>
                 </div>
 
                 {/* Content Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
                   {/* Foundational Card */}
                   <div className="flex flex-col h-full space-y-4">
-                    <div className={`rounded-xl border overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col flex-grow ${settings.highContrast ? 'border-black' : 'bg-white border-slate-200'}`}>
-                      <div className="bg-slate-50 px-6 py-4 border-b border-slate-100 flex items-center">
-                        <div className="p-1.5 bg-blue-100 rounded-lg mr-3">
-                          <GraduationCap className="w-5 h-5 text-blue-600" />
+                    <div className={`rounded-xl border overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col flex-grow ${settings.highContrast ? 'border-black' : 'bg-white/70 backdrop-blur-sm border-sky-100'}`}>
+                      <div className="bg-gradient-to-r from-sky-50 to-blue-50 px-6 py-4 border-b border-sky-100 flex items-center">
+                        <div className="p-1.5 bg-sky-200 rounded-lg mr-3">
+                          <GraduationCap className="w-5 h-5 text-sky-600" />
                         </div>
                         <div>
                           <h3 className="font-bold text-slate-800">Foundational Anatomy</h3>
-                          <p className="text-xs text-slate-500 font-medium uppercase tracking-wide">Year 1 Basis</p>
+                          <p className="text-xs text-sky-600 font-medium uppercase tracking-wide">Year 1 Basis</p>
                         </div>
                       </div>
-                      <div className="p-6 leading-relaxed flex-grow prose prose-sm max-w-none whitespace-pre-wrap">
+                      <div className="p-6 leading-relaxed flex-grow prose prose-sm max-w-none whitespace-pre-wrap text-slate-700">
                         {section.foundational}
                       </div>
                     </div>
