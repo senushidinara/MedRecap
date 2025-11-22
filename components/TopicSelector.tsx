@@ -93,36 +93,36 @@ const TopicSelector: React.FC<TopicSelectorProps> = ({ onSelectTopic, isLoading,
 
         {/* 4 Pillars of Benefit */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto text-left mb-12">
-          <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all group">
-            <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-               <Zap className="w-5 h-5 text-blue-600" />
+          <div className="bg-gradient-to-br from-sky-50 to-blue-50 p-5 rounded-2xl border border-sky-100 shadow-sm hover:shadow-md transition-all group">
+            <div className="w-10 h-10 bg-sky-200 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+               <Zap className="w-5 h-5 text-sky-600" />
             </div>
-            <h3 className="font-bold text-slate-900 text-sm mb-1">Predictive AI</h3>
-            <p className="text-xs text-slate-500 leading-relaxed">Gemini 2.5 generates content and predicts your next study topic based on performance.</p>
+            <h3 className="font-bold text-slate-800 text-sm mb-1">Predictive AI</h3>
+            <p className="text-xs text-slate-600 leading-relaxed">Gemini 2.5 generates content and predicts your next study topic based on performance.</p>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all group">
-            <div className="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <div className="bg-gradient-to-br from-mint-50 to-emerald-50 p-5 rounded-2xl border border-emerald-100 shadow-sm hover:shadow-md transition-all group">
+            <div className="w-10 h-10 bg-emerald-200 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                <Layout className="w-5 h-5 text-emerald-600" />
             </div>
-            <h3 className="font-bold text-slate-900 text-sm mb-1">Zen Mode</h3>
-            <p className="text-xs text-slate-500 leading-relaxed">Reduce cognitive load with distraction-free interfaces and mindfulness check-ins.</p>
+            <h3 className="font-bold text-slate-800 text-sm mb-1">Zen Mode</h3>
+            <p className="text-xs text-slate-600 leading-relaxed">Reduce cognitive load with distraction-free interfaces and mindfulness check-ins.</p>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all group">
-            <div className="w-10 h-10 bg-violet-50 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-               <Volume2 className="w-5 h-5 text-violet-600" />
+          <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-5 rounded-2xl border border-purple-100 shadow-sm hover:shadow-md transition-all group">
+            <div className="w-10 h-10 bg-purple-200 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+               <Volume2 className="w-5 h-5 text-purple-600" />
             </div>
-            <h3 className="font-bold text-slate-900 text-sm mb-1">Accessibility</h3>
-            <p className="text-xs text-slate-500 leading-relaxed">Includes Text-to-Speech, High Contrast modes, and Visual Recall tools for all learners.</p>
+            <h3 className="font-bold text-slate-800 text-sm mb-1">Accessibility</h3>
+            <p className="text-xs text-slate-600 leading-relaxed">Includes Text-to-Speech, High Contrast modes, and Visual Recall tools for all learners.</p>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all group">
-            <div className="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <div className="bg-gradient-to-br from-orange-50 to-amber-50 p-5 rounded-2xl border border-orange-100 shadow-sm hover:shadow-md transition-all group">
+            <div className="w-10 h-10 bg-orange-200 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                <Globe className="w-5 h-5 text-orange-600" />
             </div>
-            <h3 className="font-bold text-slate-900 text-sm mb-1">Global Access</h3>
-            <p className="text-xs text-slate-500 leading-relaxed">Offline-ready design and easy sharing to bridge educational gaps worldwide.</p>
+            <h3 className="font-bold text-slate-800 text-sm mb-1">Global Access</h3>
+            <p className="text-xs text-slate-600 leading-relaxed">Offline-ready design and easy sharing to bridge educational gaps worldwide.</p>
           </div>
         </div>
       </div>
