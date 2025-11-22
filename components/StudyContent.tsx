@@ -137,16 +137,16 @@ const StudyContent: React.FC<StudyContentProps> = ({ data, onStartQuiz, settings
         
         {/* Utility Bar */}
         <div className="flex justify-end space-x-3 mb-6 sticky top-4 z-40">
-           <button 
+           <button
              onClick={handleShare}
-             className="flex items-center space-x-2 px-4 py-2 bg-white text-slate-600 rounded-full hover:bg-blue-50 hover:text-blue-600 shadow-md border border-slate-200 transition-all font-medium text-sm"
+             className="flex items-center space-x-2 px-4 py-2 bg-white/70 backdrop-blur-sm text-purple-600 rounded-full hover:bg-purple-100 shadow-md border border-purple-100 transition-all font-medium text-sm"
            >
              <Share2 className="w-4 h-4" />
              <span>Share</span>
            </button>
-           <button 
+           <button
              onClick={() => setZenMode(!zenMode)}
-             className={`flex items-center space-x-2 px-4 py-2 rounded-full shadow-md border transition-all font-medium text-sm ${zenMode ? 'bg-teal-600 text-white border-teal-600' : 'bg-white text-slate-600 border-slate-200 hover:bg-emerald-50 hover:text-emerald-600'}`}
+             className={`flex items-center space-x-2 px-4 py-2 rounded-full shadow-md border transition-all font-medium text-sm ${zenMode ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white border-purple-500' : 'bg-white/70 backdrop-blur-sm text-purple-600 border-purple-100 hover:bg-purple-100'}`}
            >
              {zenMode ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
              <span>{zenMode ? 'Exit Zen' : 'Zen Mode'}</span>
