@@ -156,14 +156,14 @@ const StudyContent: React.FC<StudyContentProps> = ({ data, onStartQuiz, settings
         {/* Hero Header */}
         <div className="mb-10 text-center sm:text-left">
           {!zenMode && (
-            <div className="inline-flex items-center space-x-2 mb-4 px-4 py-1.5 bg-teal-50 text-teal-700 rounded-full text-sm font-semibold border border-teal-100">
+            <div className="inline-flex items-center space-x-2 mb-4 px-4 py-1.5 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold border border-purple-200">
               <Brain className="w-4 h-4" />
               <span>Clinical Anatomy Recap</span>
             </div>
           )}
-          <h1 className="text-4xl sm:text-6xl font-extrabold mb-6 tracking-tight">{data.topic}</h1>
-          
-          <div className={`p-6 rounded-2xl border shadow-sm border-l-4 border-l-teal-500 relative overflow-hidden ${settings.highContrast ? 'bg-white border-black' : 'bg-white border-slate-200'}`}>
+          <h1 className="text-4xl sm:text-6xl font-extrabold mb-6 tracking-tight bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">{data.topic}</h1>
+
+          <div className={`p-6 rounded-2xl border shadow-sm border-l-4 border-l-purple-400 relative overflow-hidden ${settings.highContrast ? 'bg-white border-black' : 'bg-white/70 backdrop-blur-sm border-purple-100'}`}>
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4 gap-4">
               <h3 className="text-lg font-semibold flex items-center">
                 <BookOpen className="w-5 h-5 mr-2 text-teal-600" />
