@@ -181,19 +181,19 @@ const LearningChat: React.FC<LearningChatProps> = ({ topic }) => {
 
               {/* Sources / Grounding */}
               {msg.sources && msg.sources.length > 0 && (
-                <div className="mt-3 pt-3 border-t border-slate-100">
-                    <div className="flex items-center text-xs font-bold text-slate-500 mb-2 uppercase tracking-wider">
+                <div className="mt-3 pt-3 border-t border-purple-100">
+                    <div className="flex items-center text-xs font-bold text-purple-600 mb-2 uppercase tracking-wider">
                         <Search className="w-3 h-3 mr-1" />
                         Sources
                     </div>
                     <div className="flex flex-wrap gap-2">
                         {msg.sources.map((source, i) => (
-                            <a 
+                            <a
                                 key={i}
                                 href={source.uri}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center max-w-full text-xs bg-slate-100 hover:bg-slate-200 text-teal-700 px-2 py-1 rounded border border-slate-200 transition-colors truncate"
+                                className="inline-flex items-center max-w-full text-xs bg-purple-100 hover:bg-purple-200 text-purple-700 px-2 py-1 rounded border border-purple-200 transition-colors truncate"
                             >
                                 <ExternalLink className="w-3 h-3 mr-1 shrink-0" />
                                 <span className="truncate max-w-[150px]">{source.title || 'Web Source'}</span>
