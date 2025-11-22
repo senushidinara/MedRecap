@@ -33,7 +33,7 @@ const generateMockMedicalContent = (topic: string): StudyGuide => {
       {
         title: "Anatomy & Structure",
         foundational: `• Basic embryological origin and development\n• Gross anatomical landmarks and relationships\n• Surface anatomy and clinical landmarks\n• Normal anatomical variations\n• Structural components and their functions\n• Blood supply and innervation patterns\n• Relationships to adjacent structures`,
-        clinical: `�� Common pathologies affecting this structure\n• Clinical presentations and symptoms\n• Diagnostic approaches and imaging findings\n• Treatment considerations\n• Prognosis and complications\n• Clinical correlations with anatomy\n• Risk factors and prevention strategies`,
+        clinical: `• Common pathologies affecting this structure\n• Clinical presentations and symptoms\n• Diagnostic approaches and imaging findings\n• Treatment considerations\n• Prognosis and complications\n• Clinical correlations with anatomy\n• Risk factors and prevention strategies`,
         mermaidChart: `graph TD\n    A["Structure Overview"] --> B["Anatomy"]\n    A --> C["Physiology"]\n    B --> D["Clinical Relevance"]\n    C --> D\n    D --> E["Treatment Approach"]`,
         keyPoints: [
           "Key Point 1: This is an essential anatomical landmark with significant clinical importance",
@@ -183,12 +183,19 @@ export const createChatSession = (topic: string): Chat => {
 
 export const generateMedicalContent = async (topic: string): Promise<StudyGuide> => {
   const ai = getAiClient();
-  
+
+  // If no API key, use mock data
+  if (!ai) {
+    console.log("API key not available, using mock data");
+    await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate loading
+    return generateMockMedicalContent(topic);
+  }
+
   // Structured output focused on Clinical Anatomy and Retention
   // Update: Explicitly requested flowcharts and bullet points to reduce density.
   const prompt = `
     Create a high-yield Clinical Anatomy and Medical review guide for: "${topic}".
-    
+
     The goal is to help doctors maximize retention of complex anatomical and physiological concepts by bridging "Basic Science" with "Clinical Relevance".
     Avoid dense walls of text. Use bullet points or short paragraphs where possible.
 
@@ -199,7 +206,7 @@ export const generateMedicalContent = async (topic: string): Promise<StudyGuide>
     4. Key Points: 2-3 rapid-fire facts.
     5. Mnemonics: A specific memory aid.
     6. Matching Pairs: 3-4 pairs for active recall.
-    
+
     Also provide a brief, high-level overview of the topic and 2 "Next Step" related topics for a predictive study pathway.
   `;
 
@@ -216,8 +223,8 @@ export const generateMedicalContent = async (topic: string): Promise<StudyGuide>
           properties: {
             topic: { type: Type.STRING },
             overview: { type: Type.STRING },
-            relatedTopics: { 
-              type: Type.ARRAY, 
+            relatedTopics: {
+              type: Type.ARRAY,
               items: { type: Type.STRING },
               description: "Predictive Pathway: Suggest 2 related topics the student should study next."
             },
@@ -229,9 +236,9 @@ export const generateMedicalContent = async (topic: string): Promise<StudyGuide>
                   title: { type: Type.STRING },
                   foundational: { type: Type.STRING },
                   clinical: { type: Type.STRING },
-                  mermaidChart: { 
-                    type: Type.STRING, 
-                    description: "Mermaid.js graph syntax (e.g. 'graph TD; A[\"Start\"]-->B[\"End\"]'). Use double quotes for node text." 
+                  mermaidChart: {
+                    type: Type.STRING,
+                    description: "Mermaid.js graph syntax (e.g. 'graph TD; A[\"Start\"]-->B[\"End\"]'). Use double quotes for node text."
                   },
                   keyPoints: {
                     type: Type.ARRAY,
