@@ -141,22 +141,22 @@ const LearningChat: React.FC<LearningChatProps> = ({ topic }) => {
     <div className="fixed bottom-6 right-6 w-full max-w-sm md:max-w-md bg-white rounded-2xl shadow-2xl z-40 flex flex-col border border-slate-200 overflow-hidden animate-in slide-in-from-bottom-5 duration-300 h-[600px] max-h-[80vh]">
       
       {/* Header */}
-      <div className="bg-slate-900 p-4 flex justify-between items-center text-white shrink-0">
+      <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-4 flex justify-between items-center text-white shrink-0">
         <div className="flex items-center space-x-2">
-            <div className="p-1.5 bg-teal-500 rounded-lg">
+            <div className="p-1.5 bg-white/20 rounded-lg">
                 <Bot className="w-5 h-5 text-white" />
             </div>
             <div>
                 <h3 className="font-bold text-sm">MedRecap Tutor</h3>
-                <p className="text-xs text-slate-300 flex items-center">
+                <p className="text-xs text-purple-100 flex items-center">
                     <Sparkles className="w-3 h-3 mr-1" />
                     Powered by Gemini
                 </p>
             </div>
         </div>
-        <button 
+        <button
           onClick={() => setIsOpen(false)}
-          className="p-1 hover:bg-white/10 rounded-full transition-colors"
+          className="p-1 hover:bg-white/20 rounded-full transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
