@@ -13,22 +13,22 @@ const Header: React.FC<HeaderProps> = ({ onHome, stats, settings, onToggleSettin
   const [showSettings, setShowSettings] = useState(false);
 
   return (
-    <header className={`border-b sticky top-0 z-50 transition-colors ${settings.highContrast ? 'bg-white border-black' : 'bg-white border-slate-200'}`}>
+    <header className={`border-b sticky top-0 z-50 transition-colors ${settings.highContrast ? 'bg-white border-black' : 'bg-white/80 backdrop-blur-sm border-purple-100'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          
+
           {/* Logo */}
-          <div 
-            className="flex items-center cursor-pointer group" 
+          <div
+            className="flex items-center cursor-pointer group"
             onClick={onHome}
           >
-            <div className={`p-2 rounded-lg transition-colors ${settings.highContrast ? 'bg-black text-white' : 'bg-teal-600 text-white group-hover:bg-teal-700'}`}>
+            <div className={`p-2 rounded-lg transition-colors ${settings.highContrast ? 'bg-black text-white' : 'bg-gradient-to-br from-purple-400 to-pink-400 text-white group-hover:shadow-lg group-hover:scale-105'}`}>
               <Activity className="h-6 w-6" />
             </div>
             <div className="ml-3">
-              <h1 className="text-xl font-bold tracking-tight">MedRecap AI</h1>
+              <h1 className="text-xl font-bold tracking-tight bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">MedRecap AI</h1>
               {!settings.largeText && (
-                <p className={`text-xs ${settings.highContrast ? 'text-black' : 'text-slate-500'} hidden sm:block`}>Rapid Clinical Integration</p>
+                <p className={`text-xs ${settings.highContrast ? 'text-black' : 'text-purple-500'} hidden sm:block font-medium`}>Rapid Clinical Integration</p>
               )}
             </div>
           </div>
