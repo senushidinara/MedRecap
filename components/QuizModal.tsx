@@ -173,33 +173,33 @@ const QuizModal: React.FC<QuizModalProps> = ({ quizData, isLoading, onClose, onC
             </div>
           ) : showResults ? (
             <div className="text-center py-10 animate-in fade-in zoom-in duration-300">
-              <div className="inline-flex items-center justify-center w-24 h-24 bg-teal-100 rounded-full mb-6">
-                <Trophy className="w-12 h-12 text-teal-600" />
+              <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full mb-6">
+                <Trophy className="w-12 h-12 text-purple-600" />
               </div>
               <h2 className="text-3xl font-bold text-slate-900 mb-2">Quiz Complete!</h2>
-              
+
               <div className="grid grid-cols-3 gap-4 max-w-sm mx-auto my-8">
-                <div className="bg-green-50 p-4 rounded-xl border border-green-100">
+                <div className="bg-gradient-to-br from-green-100 to-emerald-100 p-4 rounded-xl border border-green-200">
                   <div className="text-2xl font-bold text-green-600">{correctCount}</div>
-                  <div className="text-xs text-green-800 font-medium uppercase">Correct</div>
+                  <div className="text-xs text-green-700 font-medium uppercase">Correct</div>
                 </div>
-                <div className="bg-red-50 p-4 rounded-xl border border-red-100">
+                <div className="bg-gradient-to-br from-red-100 to-rose-100 p-4 rounded-xl border border-red-200">
                   <div className="text-2xl font-bold text-red-600">{incorrectCount}</div>
-                  <div className="text-xs text-red-800 font-medium uppercase">Incorrect</div>
+                  <div className="text-xs text-red-700 font-medium uppercase">Incorrect</div>
                 </div>
-                <div className="bg-amber-50 p-4 rounded-xl border border-amber-100">
+                <div className="bg-gradient-to-br from-amber-100 to-orange-100 p-4 rounded-xl border border-amber-200">
                   <div className="text-2xl font-bold text-amber-600">{skippedCount}</div>
-                  <div className="text-xs text-amber-800 font-medium uppercase">Skipped</div>
+                  <div className="text-xs text-amber-700 font-medium uppercase">Skipped</div>
                 </div>
-              </div>
-              
-              <div className="bg-teal-50 p-4 rounded-lg mb-8 inline-block">
-                 <p className="text-teal-800 font-bold">Points Earned: +{correctCount * 10} XP</p>
               </div>
 
-              <button 
+              <div className="bg-gradient-to-r from-purple-100 to-pink-100 p-4 rounded-lg mb-8 inline-block border border-purple-200">
+                 <p className="text-purple-800 font-bold">Points Earned: +{correctCount * 10} XP</p>
+              </div>
+
+              <button
                 onClick={() => onComplete(correctCount, totalQuestions)}
-                className="bg-slate-900 text-white px-8 py-3 rounded-xl hover:bg-slate-800 font-medium shadow-lg hover:shadow-xl transition-all"
+                className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-xl hover:from-purple-600 hover:to-pink-600 font-medium shadow-lg hover:shadow-xl transition-all"
               >
                 Complete & Save Progress
               </button>
