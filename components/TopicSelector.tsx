@@ -79,15 +79,15 @@ const TopicSelector: React.FC<TopicSelectorProps> = ({ onSelectTopic, isLoading,
 
       {/* Hero Section */}
       <div className="text-center mb-12">
-        <span className="inline-block py-1 px-3 rounded-full bg-teal-100 text-teal-700 text-xs font-bold mb-6 tracking-widest uppercase">
+        <span className="inline-block py-2 px-4 rounded-full bg-purple-200 text-purple-700 text-xs font-bold mb-6 tracking-widest uppercase">
           AI for Healthcare & Wellness
         </span>
         <h2 className={`text-4xl md:text-6xl font-extrabold mb-6 tracking-tight ${settings.highContrast ? 'text-black' : 'text-slate-900'}`}>
           Master Medicine.<br className="hidden sm:block" />
-          <span className={settings.highContrast ? 'text-black underline' : 'text-teal-600'}>Without the Burnout.</span>
+          <span className={settings.highContrast ? 'text-black underline' : 'bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent'}>Without the Burnout.</span>
         </h2>
-        <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-10">
-          The first AI study companion designed for <strong>retention</strong> and <strong>mental well-being</strong>. 
+        <p className="text-lg text-slate-700 max-w-2xl mx-auto leading-relaxed mb-10">
+          The first AI study companion designed for <strong>retention</strong> and <strong>mental well-being</strong>.
           Instantly generate diagrams, audio guides, and stress-free summaries.
         </p>
 
