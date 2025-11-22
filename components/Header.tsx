@@ -56,41 +56,41 @@ const Header: React.FC<HeaderProps> = ({ onHome, stats, settings, onToggleSettin
 
              {/* Settings Dropdown */}
              <div className="relative">
-                <button 
+                <button
                   onClick={() => setShowSettings(!showSettings)}
-                  className={`p-2 rounded-full hover:bg-slate-100 transition-colors ${showSettings ? 'bg-slate-100' : ''}`}
+                  className={`p-2 rounded-full transition-colors ${showSettings ? 'bg-purple-100' : 'hover:bg-purple-50'}`}
                   title="Accessibility Settings"
                 >
-                   <Settings className="w-6 h-6" />
+                   <Settings className="w-6 h-6 text-purple-600" />
                 </button>
 
                 {showSettings && (
-                  <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-slate-200 p-4 z-50 animate-in fade-in slide-in-from-top-2">
-                    <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Accessibility</h4>
-                    
+                  <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-purple-100 p-4 z-50 animate-in fade-in slide-in-from-top-2">
+                    <h4 className="text-sm font-bold text-purple-600 uppercase tracking-wider mb-3">Accessibility</h4>
+
                     <div className="space-y-3">
-                       <button 
+                       <button
                          onClick={() => onToggleSetting('highContrast')}
-                         className="flex items-center justify-between w-full p-2 hover:bg-slate-50 rounded-lg transition-colors"
+                         className="flex items-center justify-between w-full p-2 hover:bg-purple-50 rounded-lg transition-colors"
                        >
                           <div className="flex items-center">
-                             <Eye className="w-4 h-4 mr-2" />
+                             <Eye className="w-4 h-4 mr-2 text-purple-500" />
                              <span className="text-sm font-medium">High Contrast</span>
                           </div>
-                          <div className={`w-8 h-4 rounded-full relative transition-colors ${settings.highContrast ? 'bg-black' : 'bg-slate-300'}`}>
-                             <div className={`absolute top-0.5 w-3 h-3 rounded-full bg-white transition-all ${settings.highContrast ? 'left-4.5' : 'left-0.5'}`} style={{ left: settings.highContrast ? '18px' : '2px' }}></div>
+                          <div className={`w-8 h-4 rounded-full relative transition-colors ${settings.highContrast ? 'bg-purple-600' : 'bg-slate-200'}`}>
+                             <div className={`absolute top-0.5 w-3 h-3 rounded-full bg-white transition-all`} style={{ left: settings.highContrast ? '18px' : '2px' }}></div>
                           </div>
                        </button>
 
-                       <button 
+                       <button
                          onClick={() => onToggleSetting('largeText')}
-                         className="flex items-center justify-between w-full p-2 hover:bg-slate-50 rounded-lg transition-colors"
+                         className="flex items-center justify-between w-full p-2 hover:bg-purple-50 rounded-lg transition-colors"
                        >
                           <div className="flex items-center">
-                             <Type className="w-4 h-4 mr-2" />
+                             <Type className="w-4 h-4 mr-2 text-purple-500" />
                              <span className="text-sm font-medium">Large Text</span>
                           </div>
-                          <div className={`w-8 h-4 rounded-full relative transition-colors ${settings.largeText ? 'bg-teal-600' : 'bg-slate-300'}`}>
+                          <div className={`w-8 h-4 rounded-full relative transition-colors ${settings.largeText ? 'bg-purple-600' : 'bg-slate-200'}`}>
                               <div className={`absolute top-0.5 w-3 h-3 rounded-full bg-white transition-all`} style={{ left: settings.largeText ? '18px' : '2px' }}></div>
                           </div>
                        </button>
