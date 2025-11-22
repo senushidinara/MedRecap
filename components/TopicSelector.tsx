@@ -134,14 +134,14 @@ const TopicSelector: React.FC<TopicSelectorProps> = ({ onSelectTopic, isLoading,
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="What do you want to master today? (e.g. Circle of Willis)"
-            className={`w-full px-6 py-5 text-lg rounded-2xl border-2 shadow-lg focus:ring-4 outline-none transition-all pl-14 ${settings.highContrast ? 'border-black text-black focus:ring-black/20' : 'border-slate-200 shadow-slate-100 focus:border-teal-500 focus:ring-teal-500/20'}`}
+            className={`w-full px-6 py-5 text-lg rounded-2xl border-2 shadow-lg focus:ring-4 outline-none transition-all pl-14 ${settings.highContrast ? 'border-black text-black focus:ring-black/20' : 'bg-white/80 border-purple-200 shadow-purple-100 focus:border-purple-400 focus:ring-purple-300/30'}`}
             disabled={isLoading}
           />
-          <Search className="absolute left-5 text-slate-400 w-6 h-6" />
+          <Search className="absolute left-5 text-purple-400 w-6 h-6" />
           <button
             type="submit"
             disabled={!input.trim() || isLoading}
-            className={`absolute right-3 text-white p-3 rounded-xl transition-colors ${settings.highContrast ? 'bg-black hover:bg-slate-800' : 'bg-slate-900 hover:bg-slate-800'}`}
+            className={`absolute right-3 text-white p-3 rounded-xl transition-colors ${settings.highContrast ? 'bg-black hover:bg-slate-800' : 'bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500'}`}
           >
             {isLoading ? (
               <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
